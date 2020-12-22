@@ -1,0 +1,12 @@
+source $MYVIMRC\..\general\keybinds.vim
+source $MYVIMRC\..\general\configs.vim
+source $MYVIMRC\..\plug-config\polyglot.vim
+source $MYVIMRC\..\vim-plug\plugins.vim
+source $MYVIMRC\..\plug-config\coc.vim
+source $MYVIMRC\..\plug-config\fzf.vim
+source $MYVIMRC\..\plug-config\nerd-commenter.vim
+source $MYVIMRC\..\themes\airline.vim
+source $MYVIMRC\..\plug-config\nerdtree.vim
+source $MYVIMRC\..\plug-config\syntastic.vim
+source $MYVIMRC\..\plug-config\nerdtree-syntax-highlight.vim
+source $MYVIMRC\..\plug-config\vim-devicons.vim
