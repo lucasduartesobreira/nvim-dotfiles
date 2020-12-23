@@ -1,0 +1,15 @@
+{
+	"languageserver": {
+		"go": {
+						"command": "gopls",
+						"rootPatterns":["go.mod"],
+						"trace.server": "verbose",
+						"filetypes": ["go"]
+		}
+	},
+	"snippets.ultisnips.directories": [
+		"UltiSnips"
+	],
+	"snippets.ultisnips.usePythonx": true,
+	"snippets.ultisnips.pythonVersion": 3
+}

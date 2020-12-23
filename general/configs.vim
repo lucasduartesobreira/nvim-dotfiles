@@ -1,3 +1,7 @@
+let g:python3_host_prog = 'C:\Users\lucas\AppData\Local\Programs\Python\Python39\python3.exe'
+let g:node_host_prog = 'C:\Users\lucas\AppData\Roaming\npm\node_modules'
+set clipboard+=unnamedplus 
+
 set hidden
 set number
 set relativenumber
@@ -11,7 +15,7 @@ let mapleader="~"
 set nocompatible
 
 " enable syntax and plugins (for netrw)
-syntax enable
+syntax on
 filetype plugin on
 
 
