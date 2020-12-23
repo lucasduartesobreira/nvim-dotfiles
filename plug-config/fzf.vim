@@ -9,17 +9,25 @@ let g:fzf_action = {
 " previous-history instead of down and up. If you don't like the change,
 " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
+<<<<<<< HEAD
 
 nnoremap <C-p> :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>l :Rg<CR>
+=======
+>>>>>>> 3217f1bb2a73c51753eb4d80d107f7ee301ddadb
 
 let g:fzf_tags_command = 'ctags -R'
 " Border color
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
 
+<<<<<<< HEAD
 let $FZF_DEFAULT_OPTS = '--preview=bat --layout=reverse --info=inline'
 let $FZF_DEFAULT_COMMAND='rg --files --hidden --no-ignore-vcs -g "!{node_modules,.git}"'
+=======
+let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
+let $FZF_DEFAULT_COMMAND="rg --files --hidden"
+>>>>>>> 3217f1bb2a73c51753eb4d80d107f7ee301ddadb
 
 
 " Customize fzf colors to match your color scheme

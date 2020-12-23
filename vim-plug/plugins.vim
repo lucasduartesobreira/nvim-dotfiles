@@ -19,6 +19,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-rooter'
 Plug 'editorconfig/editorconfig-vim'
+<<<<<<< HEAD
 Plug 'tpope/vim-fugitive'
+=======
+>>>>>>> 3217f1bb2a73c51753eb4d80d107f7ee301ddadb
 
 call plug#end()

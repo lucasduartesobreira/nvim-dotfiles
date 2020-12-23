@@ -2,9 +2,12 @@ let g:python3_host_prog = 'C:\Users\lucas\AppData\Local\Programs\Python\Python39
 let g:node_host_prog = 'C:\Users\lucas\AppData\Roaming\npm\node_modules'
 set clipboard+=unnamedplus 
 
+<<<<<<< HEAD
 set guifont="FiraCode\ NF:h12"
 set shell=cmd.exe
 
+=======
+>>>>>>> 3217f1bb2a73c51753eb4d80d107f7ee301ddadb
 set hidden
 set number
 set relativenumber
