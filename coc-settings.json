@@ -11,5 +11,14 @@
 		"UltiSnips"
 	],
 	"snippets.ultisnips.usePythonx": true,
-	"snippets.ultisnips.pythonVersion": 3
+	"snippets.ultisnips.pythonVersion": 3,
+	"go.enable": true,
+	"json.enable": true,
+
+	"go.goplsOptions": {
+		"completeUnimported": true,
+		"matcher": "Fuzzy"
+	},
+	"go.goplsUseDaemon": true,
+	"go.trace.server": "verbose"
 }
