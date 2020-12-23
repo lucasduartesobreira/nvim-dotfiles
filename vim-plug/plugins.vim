@@ -18,5 +18,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-rooter'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
