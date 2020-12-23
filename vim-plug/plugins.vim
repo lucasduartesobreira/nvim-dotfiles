@@ -20,5 +20,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-rooter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
+Plug 'gotchane/vim-git-commit-prefix'
 
 call plug#end()
