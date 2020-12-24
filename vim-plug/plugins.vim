@@ -21,5 +21,6 @@ Plug 'airblade/vim-rooter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'gotchane/vim-git-commit-prefix'
+Plug 'tpope/vim-repeat'
 
 call plug#end()
