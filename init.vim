@@ -1,4 +1,5 @@
 source $MYVIMRC\..\general\keybinds.vim
+source $MYVIMRC\..\general\windows.vim
 source $MYVIMRC\..\general\configs.vim
 source $MYVIMRC\..\plug-config\polyglot.vim
 source $MYVIMRC\..\vim-plug\plugins.vim
