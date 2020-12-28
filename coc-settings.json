@@ -45,6 +45,7 @@
 	"snippets.ultisnips.directories": [
 		"UltiSnips"
 	],
+	"snippets.userSnippetsDirectory": "~/AppData/Local/nvim/snippets",
 	"snippets.ultisnips.usePythonx": true,
 	"snippets.ultisnips.pythonVersion": 3,
 	"go.enable": true,
