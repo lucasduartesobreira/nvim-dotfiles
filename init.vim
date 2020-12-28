@@ -13,3 +13,5 @@ source $MYVIMRC\..\plug-config\nerdtree-syntax-highlight.vim
 source $MYVIMRC\..\plug-config\vim-devicons.vim
 source $MYVIMRC\..\plug-config\coc-go.vim
 source $MYVIMRC\..\plug-config\editorconfig.vim
+source $MYVIMRC\..\snippets\yankandpaste.vim
+source $MYVIMRC\..\snippets\basic.vim
