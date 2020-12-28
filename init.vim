@@ -12,3 +12,4 @@ source $MYVIMRC\..\plug-config\syntastic.vim
 source $MYVIMRC\..\plug-config\nerdtree-syntax-highlight.vim
 source $MYVIMRC\..\plug-config\vim-devicons.vim
 source $MYVIMRC\..\plug-config\coc-go.vim
+source $MYVIMRC\..\plug-config\editorconfig.vim
