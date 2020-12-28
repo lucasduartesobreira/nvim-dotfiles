@@ -1,12 +1,11 @@
 " air-line
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'afterglow'
+let g:airline_theme = 'dracula'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
-let g:afterglow_italic_comments=1
-
-colorscheme afterglow
+colorscheme dracula
+set background=dark
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}

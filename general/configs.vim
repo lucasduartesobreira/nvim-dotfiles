@@ -2,6 +2,8 @@ let g:python3_host_prog = 'C:\Users\lucas\AppData\Local\Programs\Python\Python39
 let g:node_host_prog = 'C:\Users\lucas\AppData\Roaming\npm\node_modules'
 set clipboard+=unnamedplus 
 
+set termguicolors
+
 set shell=cmd.exe
 
 set hidden

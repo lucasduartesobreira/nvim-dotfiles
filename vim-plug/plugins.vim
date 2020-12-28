@@ -22,5 +22,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'gotchane/vim-git-commit-prefix'
 Plug 'tpope/vim-repeat'
+Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()
