@@ -1,31 +1,45 @@
 {
+	"coc.preferences.formatOnSaveFiletypes": [
+		"go",
+		"c",
+		"json",
+		"cpp",
+		"objc",
+		"objcpp",
+		"js",
+		"ts"
+	],
 	"languageserver": {
 		"go": {
-				"command": "gopls",
-				"rootPatterns":["go.mod"],
-				"trace.server": "verbose",
-				"filetypes": ["go"]
+			"command": "gopls",
+			"rootPatterns": [
+				"go.mod"
+			],
+			"trace.server": "verbose",
+			"filetypes": [
+				"go"
+			]
 		},
-		"ccls":{
-				"command": "ccls",
-				"filetypes": [
-						"c",
-						"cpp",
-						"objc",
-						"objcpp"
-				],
-				"rootPatterns": [
-						".ccls",
-						"compile_commands.json",
-						".vim/",
-						".git/",
-						".hg/"
-				],
-				"initializationOptions": {
-						"cache": {
-								"directory": "/tmp/ccls"
-						}
+		"ccls": {
+			"command": "ccls",
+			"filetypes": [
+				"c",
+				"cpp",
+				"objc",
+				"objcpp"
+			],
+			"rootPatterns": [
+				".ccls",
+				"compile_commands.json",
+				".vim/",
+				".git/",
+				".hg/"
+			],
+			"initializationOptions": {
+				"cache": {
+					"directory": "/tmp/ccls"
 				}
+			}
 		}
 	},
 	"snippets.ultisnips.directories": [
@@ -35,7 +49,6 @@
 	"snippets.ultisnips.pythonVersion": 3,
 	"go.enable": true,
 	"json.enable": true,
-
 	"go.goplsOptions": {
 		"completeUnimported": true,
 		"matcher": "Fuzzy"
