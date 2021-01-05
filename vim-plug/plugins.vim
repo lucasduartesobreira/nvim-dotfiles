@@ -23,5 +23,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'gotchane/vim-git-commit-prefix'
 Plug 'tpope/vim-repeat'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'fatih/vim-go'
 
 call plug#end()

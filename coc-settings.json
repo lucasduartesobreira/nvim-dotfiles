@@ -43,7 +43,8 @@
 		}
 	},
 	"snippets.ultisnips.directories": [
-		"UltiSnips"
+		"UltiSnips",
+		"gosnippets/UltiSnips"
 	],
 	"snippets.userSnippetsDirectory": "~/AppData/Local/nvim/snippets",
 	"snippets.ultisnips.usePythonx": true,

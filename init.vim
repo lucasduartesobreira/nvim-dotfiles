@@ -15,3 +15,4 @@ source $MYVIMRC\..\plug-config\coc-go.vim
 source $MYVIMRC\..\plug-config\editorconfig.vim
 source $MYVIMRC\..\snippets\yankandpaste.vim
 source $MYVIMRC\..\snippets\basic.vim
+source $MYVIMRC\..\plug-config\vim-go.vim
