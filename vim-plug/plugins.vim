@@ -24,5 +24,6 @@ Plug 'gotchane/vim-git-commit-prefix'
 Plug 'tpope/vim-repeat'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'fatih/vim-go'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 call plug#end()

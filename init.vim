@@ -17,3 +17,5 @@ source $MYVIMRC\..\snippets\yankandpaste.vim
 source $MYVIMRC\..\snippets\basic.vim
 source $MYVIMRC\..\plug-config\vim-go.vim
 source $MYVIMRC\..\plug-config\coc.nvim.vim
+source $MYVIMRC\..\plug-config\markdown-preview.vim
+
