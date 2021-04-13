@@ -1,13 +1,11 @@
 let g:loaded_python_provider = 0
 let g:loaded_ruby_provider = 0
 
-let g:python3_host_prog = 'C:\Users\lucas\AppData\Local\Programs\Python\Python39\python3.exe'
-let g:node_host_prog = 'C:\Users\lucas\AppData\Roaming\npm\node_modules\neovim'
+let g:python3_host_prog = '/usr/bin/python3'
+let g:node_host_prog = '/home/lucas/.nvm/versions/node/v14.16.1/lib/node_modules/neovim'
 set clipboard+=unnamedplus 
 
 set termguicolors
-
-set shell=cmd.exe
 
 set hidden
 set number
