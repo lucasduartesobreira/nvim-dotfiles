@@ -1,5 +1,8 @@
+let g:loaded_python_provider = 0
+let g:loaded_ruby_provider = 0
+
 let g:python3_host_prog = 'C:\Users\lucas\AppData\Local\Programs\Python\Python39\python3.exe'
-let g:node_host_prog = 'C:\Users\lucas\AppData\Roaming\npm\node_modules'
+let g:node_host_prog = 'C:\Users\lucas\AppData\Roaming\npm\node_modules\neovim'
 set clipboard+=unnamedplus 
 
 set termguicolors
