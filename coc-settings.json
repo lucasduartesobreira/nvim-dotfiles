@@ -32,10 +32,14 @@
 			}
 		}
 	},
+	"snippets.loadFromExtensions": true,
+	//"snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
 	"snippets.ultisnips.directories": [
 		"UltiSnips",
-		"gosnippets/UltiSnips"
+		"gosnippets/UltiSnips",
+		"custom-snippets"
 	],
+	"coc.preferences.snippets.enable": true,
 	"snippets.ultisnips.usePythonx": true,
 	"snippets.ultisnips.pythonVersion": 3,
 	"go.enable": true,

@@ -13,9 +13,8 @@ source $HOME/.config/nvim/plug-config/nerdtree-syntax-highlight.vim
 source $HOME/.config/nvim/plug-config/vim-devicons.vim
 source $HOME/.config/nvim/plug-config/coc-go.vim
 source $HOME/.config/nvim/plug-config/editorconfig.vim
-source $HOME/.config/nvim/snippets/yankandpaste.vim
-source $HOME/.config/nvim/snippets/basic.vim
+source $HOME/.config/nvim/custom-snippets/yankandpaste.vim
+source $HOME/.config/nvim/custom-snippets/basic.vim
 source $HOME/.config/nvim/plug-config/vim-go.vim
 source $HOME/.config/nvim/plug-config/coc.nvim.vim
 source $HOME/.config/nvim/plug-config/markdown-preview.vim
-

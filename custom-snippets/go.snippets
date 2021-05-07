@@ -22,10 +22,10 @@
 #		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
 #		endsnippet
 #
-# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
-snippet ief "if err != nil {return something(s)}" b
-if err != nil {
-	return ${1: return}
+#Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+snippet obfunc 
+func (${1:name} ${2:object}) ${3:funcName}(${4:parameters}) ${5:returns} {
+  ${6}
 }
-
+${0}
 endsnippet
