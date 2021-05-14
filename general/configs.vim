@@ -2,10 +2,14 @@ let g:loaded_python_provider = 0
 let g:loaded_ruby_provider = 0
 
 let g:python3_host_prog = '/usr/bin/python3'
-let g:node_host_prog = '/home/lucas/.nvm/versions/node/v14.16.1/lib/node_modules/neovim'
+let g:node_host_prog = '/home/dots/.nvm/versions/node/v14.17.0/lib/node_modules/neovim'
 set clipboard+=unnamedplus 
 
-set termguicolors
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
 
 set hidden
 set number
