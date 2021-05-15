@@ -25,5 +25,6 @@ Plug 'tpope/vim-repeat'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'fatih/vim-go'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
