@@ -7,6 +7,7 @@ source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/nerd-commenter.vim
 source $HOME/.config/nvim/themes/airline.vim
+source $HOME/.config/nvim/themes/theme.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
 source $HOME/.config/nvim/plug-config/syntastic.vim
 source $HOME/.config/nvim/plug-config/nerdtree-syntax-highlight.vim
