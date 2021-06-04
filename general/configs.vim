@@ -2,7 +2,7 @@ let g:loaded_python_provider = 0
 let g:loaded_ruby_provider = 0
 
 let g:python3_host_prog = '/usr/bin/python3'
-let g:node_host_prog = '/home/dots/.nvm/versions/node/v14.17.0/lib/node_modules/neovim'
+let g:node_host_prog = '/usr/lib/node_modules/neovim'
 set clipboard+=unnamedplus 
 
 if exists('+termguicolors')
