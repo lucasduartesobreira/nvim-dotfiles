@@ -3,5 +3,6 @@ let g:coc_global_extensions = [
   \ 'coc-go',
   \ 'coc-tabnine',
   \ 'coc-snippets',
-  \ 'coc-spell-checker'
+  \ 'coc-spell-checker',
+  \ 'coc-rls'
   \ ]
