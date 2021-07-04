@@ -1,8 +1,6 @@
 call plug#begin(stdpath('data'))
 
 Plug 'preservim/nerdtree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
