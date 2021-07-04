@@ -19,3 +19,4 @@ source $HOME/.config/nvim/custom-snippets/basic.vim
 source $HOME/.config/nvim/plug-config/vim-go.vim
 source $HOME/.config/nvim/plug-config/coc.nvim.vim
 source $HOME/.config/nvim/plug-config/markdown-preview.vim
+source $HOME/.config/nvim/plug-config/telescope.vim
