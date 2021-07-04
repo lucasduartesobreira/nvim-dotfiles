@@ -39,5 +39,8 @@ require('telescope').load_extension('fzf')
 EOF
 
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fnn <cmd>lua require('telescope.builtin').find_files{cwd = '~/.config/nvim'}<cr>
+nnoremap <leader>fw <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fnc <cmd>lua require('telescope.builtin').find_files{cwd = '~/.config/nvim'}<cr>
+nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_commits()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').file_browser()<cr>
+nnoremap <leader>bl <cmd>lua require('telescope.builtin').buffers{show_all_buffers = true}<cr>
