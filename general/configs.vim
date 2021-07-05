@@ -15,7 +15,7 @@ set hidden
 set number
 set relativenumber
 
-let mapleader="^"
+let mapleader=" "
 
 " {{{ BASIC SETUP
 " BASIC SETUP:
