@@ -1,6 +1,5 @@
 call plug#begin(stdpath('data'))
 
-Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
@@ -9,9 +8,6 @@ Plug 'vim-syntastic/syntastic'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'preservim/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-rooter'

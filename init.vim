@@ -3,20 +3,15 @@ source $HOME/.config/nvim/general/windows.vim
 source $HOME/.config/nvim/general/configs.vim
 source $HOME/.config/nvim/plug-config/polyglot.vim
 source $HOME/.config/nvim/vim-plug/plugins.vim
-"source $HOME/.config/nvim/plug-config/coc.vim
 source $HOME/.config/nvim/plug-config/nerd-commenter.vim
 source $HOME/.config/nvim/themes/airline.vim
 source $HOME/.config/nvim/themes/theme.vim
-source $HOME/.config/nvim/plug-config/nerdtree.vim
 source $HOME/.config/nvim/plug-config/syntastic.vim
-source $HOME/.config/nvim/plug-config/nerdtree-syntax-highlight.vim
 source $HOME/.config/nvim/plug-config/vim-devicons.vim
-"source $HOME/.config/nvim/plug-config/coc-go.vim
 source $HOME/.config/nvim/plug-config/editorconfig.vim
 source $HOME/.config/nvim/custom-snippets/yankandpaste.vim
 source $HOME/.config/nvim/custom-snippets/basic.vim
 source $HOME/.config/nvim/plug-config/vim-go.vim
-"source $HOME/.config/nvim/plug-config/coc.nvim.vim
 source $HOME/.config/nvim/plug-config/markdown-preview.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
 
