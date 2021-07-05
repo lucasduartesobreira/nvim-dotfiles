@@ -1,6 +1,6 @@
 call plug#begin(stdpath('data'))
 
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'vim-airline/vim-airline'
@@ -26,6 +26,7 @@ Plug 'SirVer/ultisnips'
 
 "TreeSitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'p00f/nvim-ts-rainbow'
 
 "Go
 Plug 'fatih/vim-go'
