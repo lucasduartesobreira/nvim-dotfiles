@@ -18,6 +18,7 @@ Plug 'tpope/vim-repeat'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
+Plug 'ray-x/lsp_signature.nvim'
 
 " Compe
 Plug 'hrsh7th/nvim-compe'
