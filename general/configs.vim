@@ -4,6 +4,7 @@ let g:loaded_ruby_provider = 0
 let g:python3_host_prog = '/usr/bin/python3'
 let g:node_host_prog = '/usr/lib/node_modules/neovim'
 set clipboard+=unnamedplus 
+set tabstop=4
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
