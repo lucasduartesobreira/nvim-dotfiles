@@ -5,6 +5,8 @@ let g:python3_host_prog = '/usr/bin/python3'
 let g:node_host_prog = '/usr/lib/node_modules/neovim'
 set clipboard+=unnamedplus 
 set tabstop=4
+set shiftwidth=4
+set expandtab
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
