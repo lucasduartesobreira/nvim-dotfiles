@@ -1,5 +1,5 @@
 require'lspconfig'.diagnosticls.setup{
-	filetypes = {"javascript", "typescript"},
+	filetypes = {"javascript", "typescript","go"},
 	init_options = {
 		linters = {
 			eslint = {
@@ -28,10 +28,26 @@ require'lspconfig'.diagnosticls.setup{
 				    [1] = "warning"
 				}
 			},
+			golang = {
+				command = "golangci-lint",
+				rootPatterns = { "go.mod" },
+				debounce = 100,
+				args = { "run", "--out-format", "json" },
+				sourceName = "golangci-lint",
+				parseJson = {
+						sourceName = "Pos.Filename",
+						sourceNameFilter = true,
+						errorsRoot = "Issues",
+						line = "Pos.Line",
+						column = "Pos.Column",
+						message = "${Text} [${FromLinter}]",
+				}
+		    }
 		},
 		filetypes = {
 			 javascript = "eslint",
 			 typescript = "eslint",
+			 go = "golangci-lint"
 		}
 	}
 }

@@ -20,7 +20,12 @@ end
 
 require'lspconfig'.rust_analyzer.setup {
   capabilities = capabilities,
-  on_attach = on_attach
+  on_attach = on_attach,
+  settings = {
+    ["rust-analyzer"] = {
+        checkOnSave = { command = "clippy"}
+    }
+  }
 }
 --[[
    [
