@@ -1,24 +1,10 @@
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.completion.completionItem.resolveSupport = {
-  properties = {
-    'documentation',
-    'detail',
-    'additionalTextEdits',
-  }
-}
+--add snippet support
+local capabilities = require("lsp-server-configs/add-snippet").on_attach
 
 --lsp_signature config
-local on_attach = function (client, bufnr)
-	require "lsp_signature".on_attach({
-		bind = true,
-		handler_opts = {
-			border = "single"
-		}
-	})
-end
+local on_attach = require("plug-config/lspsignature-config").on_attach
 
-require'lspconfig'.gopls.setup{
-  capabilities = capabilities;
-  on_attach = on_attach;
+require "lspconfig".gopls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach
 }
