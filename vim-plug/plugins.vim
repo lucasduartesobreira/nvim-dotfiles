@@ -33,13 +33,13 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'p00f/nvim-ts-rainbow'
 
 "Go
-Plug 'fatih/vim-go'
+"Plug 'fatih/vim-go'
 
-"Markdown 
+"Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 "Rust
-Plug 'rust-lang/rust.vim'
+"Plug 'rust-lang/rust.vim'
 
 "Telescope
 Plug 'nvim-lua/popup.nvim'

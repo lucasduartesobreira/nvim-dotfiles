@@ -11,7 +11,7 @@ source $HOME/.config/nvim/plug-config/vim-devicons.vim
 source $HOME/.config/nvim/plug-config/editorconfig.vim
 source $HOME/.config/nvim/custom-snippets/yankandpaste.vim
 source $HOME/.config/nvim/custom-snippets/basic.vim
-source $HOME/.config/nvim/plug-config/vim-go.vim
+"source $HOME/.config/nvim/plug-config/vim-go.vim
 source $HOME/.config/nvim/plug-config/markdown-preview.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
 
