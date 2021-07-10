@@ -3,10 +3,10 @@ call plug#begin(stdpath('data'))
 "Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
-Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'rafi/awesome-vim-colorschemes'
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'rafi/awesome-vim-colorschemes'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
@@ -15,6 +15,14 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'gotchane/vim-git-commit-prefix'
 Plug 'tpope/vim-repeat'
+
+" GitHub Theme
+Plug 'projekt0n/github-nvim-theme'
+
+" Lualine
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+
 
 " Format
 Plug 'mhartington/formatter.nvim'
