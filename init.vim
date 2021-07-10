@@ -15,6 +15,9 @@ source $HOME/.config/nvim/plug-config/vim-go.vim
 source $HOME/.config/nvim/plug-config/markdown-preview.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
 
+"Format
+luafile $HOME/.config/nvim/plug-config/formatter.lua
+
 "TreeSitter
 luafile $HOME/.config/nvim/plug-config/nvim-treesitter.lua
 

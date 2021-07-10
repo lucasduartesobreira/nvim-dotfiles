@@ -16,6 +16,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'gotchane/vim-git-commit-prefix'
 Plug 'tpope/vim-repeat'
 
+" Format
+Plug 'mhartington/formatter.nvim'
+
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'ray-x/lsp_signature.nvim'
