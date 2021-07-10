@@ -15,6 +15,10 @@ source $HOME/.config/nvim/custom-snippets/basic.vim
 source $HOME/.config/nvim/plug-config/markdown-preview.vim
 source $HOME/.config/nvim/plug-config/telescope.vim
 
+" GitSign
+luafile $HOME/.config/nvim/lua/plug-config/gitsigns-config.lua
+
+
 " Theme
 luafile $HOME/.config/nvim/lua/theme/github-theme.lua
 

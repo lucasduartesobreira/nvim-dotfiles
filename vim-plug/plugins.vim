@@ -8,7 +8,7 @@ Plug 'vim-syntastic/syntastic'
 "Plug 'vim-airline/vim-airline-themes'
 "Plug 'rafi/awesome-vim-colorschemes'
 Plug 'preservim/nerdcommenter'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-rooter'
 Plug 'editorconfig/editorconfig-vim'
@@ -55,5 +55,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
+" GitSigns
+Plug 'lewis6991/gitsigns.nvim'
 
 call plug#end()
