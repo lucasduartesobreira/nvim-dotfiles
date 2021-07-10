@@ -26,7 +26,8 @@ Plug 'ray-x/lsp_signature.nvim'
 " Compe
 Plug 'hrsh7th/nvim-compe'
 Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
-Plug 'SirVer/ultisnips'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets'
 
 "TreeSitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update

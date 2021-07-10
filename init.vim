@@ -27,3 +27,4 @@ source $HOME/.config/nvim/lsp-servers/setup-all.vim
 
 "Compe
 luafile $HOME/.config/nvim/plug-config/compe-config.lua
+luafile $HOME/.config/nvim/lua/plug-config/luasnip-config.lua
