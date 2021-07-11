@@ -85,6 +85,6 @@ vim.api.nvim_set_keymap(
   'compe#confirm({ \'keys\': "<Plug>delimitMateCR", \'mode\': \'\' })',
   {expr = true, silent = true}
 )
-vim.api.nvim_set_keymap("i", "<C-e>", "compe#close('<C-e>')", {expr = true, silent = true})
+vim.api.nvim_set_keymap("i", "<C-y>", "compe#close('<C-y>')", {expr = true, silent = true})
 vim.api.nvim_set_keymap("i", "<C-f>", "compe#scroll({ 'delta': +4 })", {expr = true, silent = true})
 vim.api.nvim_set_keymap("i", "<C-d>", "compe#scroll({ 'delta': -4 })", {expr = true, silent = true})
