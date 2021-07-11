@@ -16,6 +16,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'gotchane/vim-git-commit-prefix'
 Plug 'tpope/vim-repeat'
 
+" BufferLine
+Plug 'akinsho/nvim-bufferline.lua'
+
 " GitHub Theme
 Plug 'projekt0n/github-nvim-theme'
 
