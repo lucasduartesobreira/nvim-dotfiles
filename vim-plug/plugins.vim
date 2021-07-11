@@ -63,4 +63,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 " GitSigns
 Plug 'lewis6991/gitsigns.nvim'
 
+" Discord Rich Presence
+Plug 'andweeb/presence.nvim'
+
 call plug#end()

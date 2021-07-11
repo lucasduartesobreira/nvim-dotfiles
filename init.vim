@@ -39,3 +39,6 @@ luafile $HOME/.config/nvim/lua/plug-config/luasnip-config.lua
 
 " BufferLine
 luafile $HOME/.config/nvim/lua/plug-config/bufferline-config.lua
+
+" Discord Rich Presence
+luafile $HOME/.config/nvim/lua/plug-config/rich-presence-config.lua
