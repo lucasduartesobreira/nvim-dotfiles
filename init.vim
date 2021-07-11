@@ -27,6 +27,7 @@ luafile $HOME/.config/nvim/plug-config/formatter.lua
 
 "TreeSitter
 luafile $HOME/.config/nvim/plug-config/nvim-treesitter.lua
+luafile $HOME/.config/nvim/lua/plug-config/spellsitter-config.lua
 
 "LSP
 source $HOME/.config/nvim/plug-config/lsp-config.vim
