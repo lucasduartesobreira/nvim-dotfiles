@@ -3,7 +3,7 @@ local on_attach = function(client, bufnr)
     {
       bind = true,
       handler_opts = {
-        border = "single"
+        border = "none"
       }
     }
   )
