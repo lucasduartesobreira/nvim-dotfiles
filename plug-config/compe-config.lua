@@ -15,10 +15,8 @@ require("compe").setup {
   max_menu_width = 100,
   documentation = {
     winhighlight = "FloatBorder:CompeDocumentation",
-    max_width = 120,
-    min_width = 60,
-    max_height = math.floor(vim.o.lines * 0.3),
-    min_height = 1
+    min_width = 0,
+    min_height = 0
   },
   source = {
     path = true,
