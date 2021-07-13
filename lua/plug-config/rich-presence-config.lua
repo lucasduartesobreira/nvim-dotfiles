@@ -10,11 +10,11 @@ require("presence"):setup(
     debounce_timeout = 10, -- Number of seconds to debounce events (or calls to `:lua package.loaded.presence:update(<filename>, true)`)
     enable_line_number = false, -- Displays the current line number instead of the current project
     -- Rich Presence text options
-    editing_text = "AAAAA Deu merda %s", -- Format string rendered when an editable file is loaded in the buffer
-    file_explorer_text = "Ondé qeuto %s", -- Format string rendered when browsing a file explorer
-    git_commit_text = "Rezando pra dar certo", -- Format string rendered when commiting changes in git
+    editing_text = "Working on %s", -- Format string rendered when an editable file is loaded in the buffer
+    file_explorer_text = "Browsing...", -- Format string rendered when browsing a file explorer
+    git_commit_text = "Please, WORK", -- Format string rendered when commiting changes in git
     plugin_manager_text = "Managing plugins", -- Format string rendered when managing plugins
-    reading_text = "MODO ONDE TÁ ESSE ERRO %s", -- Format string rendered when a read-only or unmodifiable file is loaded in the buffer
+    reading_text = "Reading %s", -- Format string rendered when a read-only or unmodifiable file is loaded in the buffer
     workspace_text = "Working on %s", -- Workspace format string (either string or function(git_project_name: string|nil, buffer: string): string)
     line_number_text = "Line %s out of %s" -- Line number format string (for when enable_line_number is set to true)
   }
