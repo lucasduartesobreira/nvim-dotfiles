@@ -2,7 +2,7 @@ call plug#begin(stdpath('data'))
 
 "Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
-Plug 'Raimondi/delimitMate'
+"Plug 'Raimondi/delimitMate'
 "Plug 'vim-airline/vim-airline'
 Plug 'vim-syntastic/syntastic'
 "Plug 'vim-airline/vim-airline-themes'
@@ -68,4 +68,7 @@ Plug 'andweeb/presence.nvim'
 
 " LazyGit
 Plug 'kdheepak/lazygit.nvim'
+
+" Autopairs
+Plug 'windwp/nvim-autopairs'
 call plug#end()

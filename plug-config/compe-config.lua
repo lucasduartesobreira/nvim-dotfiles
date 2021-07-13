@@ -76,12 +76,6 @@ vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
 -- Default Keybinds
 vim.api.nvim_set_keymap("i", "<C-Space>", "compe#complete()", {expr = true, silent = true})
-vim.api.nvim_set_keymap(
-  "i",
-  "<CR>",
-  'compe#confirm({ \'keys\': "<Plug>delimitMateCR", \'mode\': \'\' })',
-  {expr = true, silent = true}
-)
 vim.api.nvim_set_keymap("i", "<C-y>", "compe#close('<C-y>')", {expr = true, silent = true})
 vim.api.nvim_set_keymap("i", "<C-f>", "compe#scroll({ 'delta': +4 })", {expr = true, silent = true})
 vim.api.nvim_set_keymap("i", "<C-d>", "compe#scroll({ 'delta': -4 })", {expr = true, silent = true})

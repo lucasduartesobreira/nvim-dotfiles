@@ -42,3 +42,6 @@ luafile $HOME/.config/nvim/lua/plug-config/bufferline-config.lua
 
 " Discord Rich Presence
 luafile $HOME/.config/nvim/lua/plug-config/rich-presence-config.lua
+
+" Autopairs
+luafile $HOME/.config/nvim/lua/plug-config/nvim-autopairs-config.lua
