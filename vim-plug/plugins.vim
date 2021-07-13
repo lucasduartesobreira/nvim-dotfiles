@@ -66,4 +66,6 @@ Plug 'lewis6991/gitsigns.nvim'
 " Discord Rich Presence
 Plug 'andweeb/presence.nvim'
 
+" LazyGit
+Plug 'kdheepak/lazygit.nvim'
 call plug#end()
