@@ -78,4 +78,7 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'theHamsta/nvim-dap-virtual-text'
 
+" Tmux
+Plug 'aserowy/tmux.nvim'
+
 call plug#end()

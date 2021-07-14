@@ -50,3 +50,6 @@ luafile $HOME/.config/nvim/lua/plug-config/nvim-autopairs-config.lua
 luafile $HOME/.config/nvim/lua/plug-config/nvim-dap-config.lua
 luafile $HOME/.config/nvim/lua/plug-config/nvim-dap-virtual-text-config.lua
 luafile $HOME/.config/nvim/lua/plug-config/nvim-dap-ui-config.lua
+
+" Tmux
+luafile $HOME/.config/nvim/lua/plug-config/tmux-config.lua
