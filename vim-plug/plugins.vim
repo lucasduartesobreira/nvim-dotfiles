@@ -10,7 +10,6 @@ Plug 'vim-syntastic/syntastic'
 Plug 'preservim/nerdcommenter'
 "Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
-Plug 'airblade/vim-rooter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'gotchane/vim-git-commit-prefix'
@@ -80,5 +79,8 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 
 " Tmux
 Plug 'aserowy/tmux.nvim'
+
+" LSP ROOTER
+Plug 'ahmedkhalf/lsp-rooter.nvim'
 
 call plug#end()
