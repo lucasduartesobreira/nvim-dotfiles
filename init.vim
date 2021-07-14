@@ -45,3 +45,8 @@ luafile $HOME/.config/nvim/lua/plug-config/rich-presence-config.lua
 
 " Autopairs
 luafile $HOME/.config/nvim/lua/plug-config/nvim-autopairs-config.lua
+
+" DAP
+luafile $HOME/.config/nvim/lua/plug-config/nvim-dap-config.lua
+luafile $HOME/.config/nvim/lua/plug-config/nvim-dap-virtual-text-config.lua
+luafile $HOME/.config/nvim/lua/plug-config/nvim-dap-ui-config.lua

@@ -72,4 +72,10 @@ Plug 'kdheepak/lazygit.nvim'
 
 " Autopairs
 Plug 'windwp/nvim-autopairs'
+
+" DAP
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
+
 call plug#end()
