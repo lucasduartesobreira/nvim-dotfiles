@@ -59,3 +59,6 @@ luafile $HOME/.config/nvim/lua/plug-config/lsp-rooter.lua
 
 " Colorizer
 luafile $HOME/.config/nvim/lua/plug-config/nvim-colorizer-config.lua
+
+" Todo Comments
+luafile $HOME/.config/nvim/lua/plug-config/todo-comments-config.lua

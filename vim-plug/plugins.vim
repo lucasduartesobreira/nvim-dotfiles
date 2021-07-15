@@ -87,4 +87,7 @@ Plug 'ahmedkhalf/lsp-rooter.nvim'
 " Colorizer
 Plug 'norcalli/nvim-colorizer.lua'
 
+" Todo comments
+Plug 'folke/todo-comments.nvim'
+
 call plug#end()

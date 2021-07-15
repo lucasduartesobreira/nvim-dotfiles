@@ -45,3 +45,4 @@ nnoremap <leader>gc <cmd>lua require('telescope.builtin').git_commits()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').file_browser()<cr>
 nnoremap <leader>bl <cmd>lua require('telescope.builtin').buffers{show_all_buffers = true}<cr>
 nnoremap <cr> <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
+nnoremap <leader>tc :TodoTelescope<cr>
