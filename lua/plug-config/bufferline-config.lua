@@ -33,6 +33,19 @@ require("bufferline").setup {
       return s
     end,
     -- NOTE: this will be called a lot so don't do any heavy processing here
+    custom_filter = function(buf_number)
+      -- filter out by buffer name
+      if vim.fn.bufname(buf_number) ~= "" then
+        return true
+      end
+      -- filter out by buffer name
+      if vim.bo[buf_number].filetype ~= "dap-repl" then
+        return true
+      end
+      if vim.fn.bufname(buf_number) ~= "dap-repl" then
+        return true
+      end
+    end,
     offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center"}},
     show_buffer_icons = true, -- disable filetype icons for buffers
     show_buffer_close_icons = false,
