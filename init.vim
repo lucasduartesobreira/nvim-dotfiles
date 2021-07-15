@@ -56,3 +56,6 @@ luafile $HOME/.config/nvim/lua/plug-config/tmux-config.lua
 
 " LSP ROOTER
 luafile $HOME/.config/nvim/lua/plug-config/lsp-rooter.lua
+
+" Colorizer
+luafile $HOME/.config/nvim/lua/plug-config/nvim-colorizer-config.lua

@@ -83,4 +83,7 @@ Plug 'aserowy/tmux.nvim'
 " LSP ROOTER
 Plug 'ahmedkhalf/lsp-rooter.nvim'
 
+" Colorizer
+Plug 'norcalli/nvim-colorizer.lua'
+
 call plug#end()
