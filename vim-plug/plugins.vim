@@ -45,6 +45,7 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'lewis6991/spellsitter.nvim'
 Plug 'nvim-treesitter/playground'
 Plug 'windwp/nvim-ts-autotag'
+Plug 'RRethy/nvim-treesitter-textsubjects'
 
 "Go
 "Plug 'fatih/vim-go'
