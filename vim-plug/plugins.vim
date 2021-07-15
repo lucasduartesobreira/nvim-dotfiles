@@ -44,6 +44,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'lewis6991/spellsitter.nvim'
 Plug 'nvim-treesitter/playground'
+Plug 'windwp/nvim-ts-autotag'
 
 "Go
 "Plug 'fatih/vim-go'
