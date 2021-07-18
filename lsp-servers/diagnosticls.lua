@@ -1,5 +1,6 @@
 require "lspconfig".diagnosticls.setup {
   filetypes = {"javascript", "typescript", "go"},
+  cmd = {"diagnostic-languageserver", "--stdio", "--log-level", "2"},
   init_options = {
     linters = {
       eslint = {
@@ -31,8 +32,8 @@ require "lspconfig".diagnosticls.setup {
       ["golangci-lint"] = {
         command = "golangci-lint",
         rootPatterns = {".git", "go.mod"},
-        debounce = 200,
-        args = {"run", "--enable", "golint", "--out-format", "json", "%filepath"},
+        debounce = 100,
+        args = {"run", "--out-format", "json", "%filepath"},
         sourceName = "golangci-lint",
         parseJson = {
           sourceName = "Pos.Filename",
