@@ -1,7 +1,11 @@
 local npairs = require("nvim-autopairs")
 npairs.setup(
   {
-    check_ts = true
+    check_ts = true,
+    ts_config = {
+      rust = {"line_comment", "block_comment"},
+      go = {"comment"}
+    }
   }
 )
 
