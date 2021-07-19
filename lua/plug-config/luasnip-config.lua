@@ -1,10 +1,27 @@
+local ls = require("luasnip")
 --luasnip
-require "luasnip".config.set_config(
+ls.config.set_config(
   {
     history = false,
     updateevents = nil
   }
 )
+
+local s = ls.snippet
+local t = ls.text_node
+local i = ls.insert_node
+
+ls.snippets = {
+  all = {
+    s(
+      "todo",
+      {
+        t("TODO: "),
+        i(1)
+      }
+    )
+  }
+}
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
