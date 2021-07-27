@@ -3,3 +3,4 @@ luafile $HOME/.config/nvim/lsp-servers/rust.lua
 luafile $HOME/.config/nvim/lsp-servers/lua.lua
 luafile $HOME/.config/nvim/lsp-servers/denols.lua
 luafile $HOME/.config/nvim/lsp-servers/diagnosticls.lua
+luafile $HOME/.config/nvim/lsp-servers/ocaml.lua
