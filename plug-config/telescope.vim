@@ -46,3 +46,9 @@ nnoremap <leader>fb <cmd>lua require('telescope.builtin').file_browser()<cr>
 nnoremap <leader>bl <cmd>lua require('telescope.builtin').buffers{show_all_buffers = true}<cr>
 nnoremap <cr> <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
 nnoremap <leader>tc :TodoTelescope<cr>
+
+"LSP Integration
+nnoremap <leader>gr <cmd>lua require('telescope.builtin').lsp_references()<cr>
+nnoremap <leader>gi <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
+nnoremap <leader>ld <cmd>lua require('telescope.builtin').lsp_document_diagnostics()<cr>
+nnoremap gd <cmd>lua require('telescope.builtin').lsp_definitions()<cr>
