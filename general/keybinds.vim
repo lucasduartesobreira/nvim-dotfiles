@@ -27,3 +27,56 @@ endfunction
 augroup Sla
 autocmd BufWinEnter,WinEnter * inoremap <buffer> <Esc> <Esc>:call LuasnipCurrentNodeNil()<CR>
 augroup end
+
+" Vim integration
+nnoremap Y y$
+
+" Keep centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ'z
+
+" Undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+
+" Jumplist mutations
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+" Moving text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-A-k> <esc>:m .-2<CR>==i
+inoremap <C-A-j> <esc>:m .+1<CR>==i
+nnoremap <leader>k <esc>:m .-2<CR>==
+nnoremap <leader>j <esc>:m .+1<CR>==
+
+" Copied from The Primeagen vim config
+" Nagivation
+nnoremap <C-A-k> :cnext<CR>zz
+nnoremap <C-A-j> :cprev<CR>zz
+nnoremap <C-q> :call ToggleQFList(1)<CR>
+
+let g:the_primeagen_qf_l = 0
+let g:the_primeagen_qf_g = 0
+
+fun! ToggleQFList(global)
+    if a:global
+        if g:the_primeagen_qf_g == 1
+            let g:the_primeagen_qf_g = 0
+            cclose
+        else
+            let g:the_primeagen_qf_g = 1
+            copen
+        end
+    else
+        if g:the_primeagen_qf_l == 1
+            let g:the_primeagen_qf_l = 0
+            lclose
+        else
+            let g:the_primeagen_qf_l = 1
+            lopen
+        end
+    endif
+endfun
