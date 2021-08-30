@@ -5,7 +5,7 @@ npairs.setup(
     ts_config = {
       rust = {"line_comment", "block_comment"},
       go = {"comment"}
-    }
+    },
     enable_check_bracket_line = false
   }
 )
