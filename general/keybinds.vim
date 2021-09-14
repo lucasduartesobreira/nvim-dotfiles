@@ -2,6 +2,10 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <Up> <C-w>+
+nnoremap <Down> <C-w>-
+nnoremap <Left> <C-w><
+nnoremap <Right> <C-w>>
 
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
