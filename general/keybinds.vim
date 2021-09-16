@@ -17,6 +17,9 @@ cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
+"Resource nvim
+nnoremap <leader>r <cmd>:source $MYVIMRC<CR>
+
 augroup Terminal
 autocmd BufWinEnter,WinEnter * nnoremap <buffer> <leader>nt :botright new <bar> :terminal <CR>
 augroup end
