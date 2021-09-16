@@ -20,6 +20,9 @@ cnoremap <C-l> <Right>
 "Resource nvim
 nnoremap <leader>r <cmd>:source $MYVIMRC<CR>
 
+"Open Lazygit
+nnoremap <leader>lg <cmd>LazyGit<CR>
+
 augroup Terminal
 autocmd BufWinEnter,WinEnter * nnoremap <buffer> <leader>nt :botright new <bar> :terminal <CR>
 augroup end
