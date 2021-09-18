@@ -9,7 +9,7 @@ end
 local eslintFmt = function()
   return {
     exe = "eslint",
-    args = {"--stdin", "--stdin-filename", vim.api.nvim_buf_get_name(0), "--fix-to-stdout"},
+    args = {"--stdin", "--stdin-filename", vim.api.nvim_buf_get_name(0), "--fix-dry-run"},
     stdin = true
   }
 end
