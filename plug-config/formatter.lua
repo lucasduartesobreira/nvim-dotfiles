@@ -1,6 +1,6 @@
 local prettierFmt = function()
   return {
-    exe = "prettier",
+    exe = "npx prettier",
     args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote"},
     stdin = true
   }
@@ -8,7 +8,7 @@ end
 
 local eslintFmt = function()
   return {
-    exe = "eslint",
+    exe = "npx eslint",
     args = {"--stdin", "--stdin-filename", vim.api.nvim_buf_get_name(0), "--fix-dry-run"},
     stdin = true
   }
