@@ -62,3 +62,6 @@ luafile $HOME/.config/nvim/lua/plug-config/nvim-colorizer-config.lua
 
 " Todo Comments
 luafile $HOME/.config/nvim/lua/plug-config/todo-comments-config.lua
+
+
+source $HOME/.config/nvim/general/keybinds.vim
