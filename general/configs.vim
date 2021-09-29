@@ -20,6 +20,10 @@ set relativenumber
 
 let mapleader=" "
 
+set list
+set showbreak=↪\ 
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨
+
 " {{{ BASIC SETUP
 " BASIC SETUP:
 
