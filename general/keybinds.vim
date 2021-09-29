@@ -18,6 +18,14 @@ cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
+nnoremap <A-,> :split<CR><C-w>j " Horizontal split
+nnoremap <A-.> :vsplit<CR><C-w>l " Vertical split
+nnoremap <A-\> :close<CR>
+
+nnoremap <A-<> <C-w>K " Convert vertical to horizontal split
+nnoremap <A->> <C-w>L " Convert horizontal to vertical split
+
+
 "Resource nvim
 nnoremap <leader>r <cmd>:source $MYVIMRC<CR>
 
