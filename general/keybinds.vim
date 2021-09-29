@@ -90,3 +90,6 @@ fun! ToggleQFList(global)
         end
     endif
 endfun
+
+inoremap <A-;> <esc>A;<esc>
+nnoremap <A-;> A;<esc>
