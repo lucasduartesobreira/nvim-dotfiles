@@ -1,6 +1,3 @@
--- Lua
-require("github-theme").setup()
-
 require "lualine".setup {
   options = {
     icons_enabled = true,
@@ -28,3 +25,11 @@ require "lualine".setup {
   tabline = {},
   extensions = {}
 }
+-- Lua
+require("github-theme").setup(
+  {
+    theme_style = "dark_default",
+    function_style = "bold",
+    dark_float = true
+  }
+)
