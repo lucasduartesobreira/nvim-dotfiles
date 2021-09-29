@@ -73,7 +73,7 @@ Plug 'andweeb/presence.nvim'
 Plug 'kdheepak/lazygit.nvim'
 
 " Autopairs
-Plug 'windwp/nvim-autopairs', { 'commit': '10597ab695a734e39094315aebe341ca302e9660' }
+Plug 'windwp/nvim-autopairs'
 
 " DAP
 Plug 'mfussenegger/nvim-dap'

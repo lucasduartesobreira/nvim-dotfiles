@@ -19,15 +19,74 @@ require("nvim-autopairs.completion.compe").setup(
 
 local Rule = require("nvim-autopairs.rule")
 
-local ts_conds = require("nvim-autopairs.ts-conds")
+local cond = require("nvim-autopairs.conds")
 
-npairs.add_rules(
-  {
-    Rule("<", ">", "rust"):with_pair(ts_conds.is_not_ts_node({"if_statement"})),
-    Rule("{", "}"):end_wise(
-      function()
+npairs.add_rules {
+  Rule("=>", " {  }", {"typescript", "typescriptreact", "javascript", "rust"}):set_end_pair_length(2),
+  --Space between () or [] or {}
+  Rule(" ", " "):with_pair(
+    function(opts)
+      local pair = opts.line:sub(opts.col - 1, opts.col)
+      return vim.tbl_contains({"()", "[]", "{}"}, pair)
+    end
+  ),
+  -- Jump to ) if inside a ( )
+  Rule("( ", " )"):with_pair(
+    function()
+      return false
+    end
+  ):with_move(
+    function(opts)
+      return opts.prev_char:match(".%)") ~= nil
+    end
+  ):use_key(")"),
+  -- Jump to } if inside a { }
+  Rule("{ ", " }"):with_pair(
+    function()
+      return false
+    end
+  ):with_move(
+    function(opts)
+      return opts.prev_char:match(".%}") ~= nil
+    end
+  ):use_key("}"),
+  -- Jump to ] if inside a ]
+  Rule("[ ", " ]"):with_pair(
+    function()
+      return false
+    end
+  ):with_move(
+    function(opts)
+      return opts.prev_char:match(".%]") ~= nil
+    end
+  ):use_key("]"),
+  -- space before = when find variable=
+  Rule("=", ""):with_pair(cond.not_inside_quote()):with_pair(
+    function(opts)
+      local last_char = opts.line:sub(opts.col - 1, opts.col - 1)
+      if last_char:match("[%w%=%s]") then
         return true
       end
-    )
-  }
-)
+      return false
+    end
+  ):replace_endpair(
+    function(opts)
+      local prev_2char = opts.line:sub(opts.col - 2, opts.col - 1)
+      local next_char = opts.line:sub(opts.col, opts.col)
+      next_char = next_char == " " and "" or " "
+      if prev_2char:match("%w$") then
+        return "<bs> =" .. next_char
+      end
+      if prev_2char:match("%=$") then
+        return next_char
+      end
+      if prev_2char:match("=") then
+        return "<bs><bs>=" .. next_char
+      end
+      return ""
+    end
+  ):set_end_pair_length(0):with_move(cond.none()):with_del(cond.none())
+}
+
+-- Disable '' for when it foresee <
+npairs.get_rule("'"):with_pair(cond.not_before_text_check("<"))
