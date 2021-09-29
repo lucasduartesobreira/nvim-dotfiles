@@ -52,7 +52,7 @@ luafile $HOME/.config/nvim/lua/plug-config/nvim-dap-virtual-text-config.lua
 luafile $HOME/.config/nvim/lua/plug-config/nvim-dap-ui-config.lua
 
 " Tmux
-luafile $HOME/.config/nvim/lua/plug-config/tmux-config.lua
+"luafile $HOME/.config/nvim/lua/plug-config/tmux-config.lua
 
 " LSP ROOTER
 luafile $HOME/.config/nvim/lua/plug-config/lsp-rooter.lua
