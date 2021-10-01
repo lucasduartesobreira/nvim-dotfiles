@@ -61,7 +61,7 @@ npairs.add_rules {
     end
   ):use_key("]"),
   -- space before = when find variable=
-  Rule("=", ""):with_pair(cond.not_inside_quote()):with_pair(
+  Rule("=", "", {"rust", "javascript", "typescript", "python"}):with_pair(cond.not_inside_quote()):with_pair(
     function(opts)
       local last_char = opts.line:sub(opts.col - 1, opts.col - 1)
       if last_char:match("[%w%=%s]") then
