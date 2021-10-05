@@ -92,4 +92,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 " Todo comments
 Plug 'folke/todo-comments.nvim'
 
+" WakaTime
+Plug 'wakatime/vim-wakatime'
+
 call plug#end()
