@@ -112,15 +112,21 @@ fun! Rename()
     let name = input('Enter name:')
     call inputrestore()
 
+    let path = expand("%:p:h")
+    let file_extension = expand("%:p:e")
+
+    let name_with_path =  path . '/' . name . '.' . file_extension
+
     call inputsave()
     let delete_file =confirm("Delete?","&Yes\n&No",1) 
     call inputrestore()
 
     try
-        execute 'sav' . name
+        execute 'sav ' . name_with_path
         if delete_file == 1
             execute "call delete(expand('#'))"
         end
+        bd #
     endtry
 
 endfunction
