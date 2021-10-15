@@ -130,3 +130,5 @@ fun! Rename()
     endtry
 
 endfunction
+
+nnoremap <leader>fr :call Rename()
