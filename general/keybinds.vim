@@ -106,3 +106,15 @@ endfun
 
 inoremap <A-;> <esc>A;<esc>
 nnoremap <A-;> A;<esc>
+
+fun! Rename()
+    call inputsave()
+    let name = input('Enter name:')
+    call inputrestore()
+
+    try
+        execute 'sav' . name
+        execute '!rm' . <C-R>#
+    endtry
+
+endfunction
