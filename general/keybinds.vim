@@ -112,9 +112,15 @@ fun! Rename()
     let name = input('Enter name:')
     call inputrestore()
 
+    call inputsave()
+    let delete_file =confirm("Delete?","&Yes\n&No",1) 
+    call inputrestore()
+
     try
         execute 'sav' . name
-        execute '!rm' . <C-R>#
+        if delete_file == 1
+            execute "call delete(expand('#'))"
+        end
     endtry
 
 endfunction
