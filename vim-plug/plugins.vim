@@ -34,8 +34,16 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'ray-x/lsp_signature.nvim'
 
 " Compe
-Plug 'hrsh7th/nvim-compe'
-Plug 'tzachar/compe-tabnine', { 'do': './install.sh' }
+Plug 'onsails/lspkind-nvim'
+Plug 'hrsh7th/cmp-emoji'
+Plug 'kdheepak/cmp-latex-symbols'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'hrsh7th/cmp-path'
+Plug 'f3fora/cmp-spell'
+Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+Plug 'hrsh7th/nvim-cmp'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
 
