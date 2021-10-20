@@ -3,7 +3,8 @@ local ls = require("luasnip")
 ls.config.set_config(
   {
     history = false,
-    updateevents = nil
+    updateevents = "InsertLeave,TextChangedI",
+    region_check_events = "InsertEnter,CursorHold,CursorHoldI"
   }
 )
 
