@@ -22,6 +22,8 @@ local Rule = require("nvim-autopairs.rule")
 local cond = require("nvim-autopairs.conds")
 
 npairs.add_rules {
+  -- Disable '' for when it foresee <
+  Rule("'", "'", {"rust"}):with_pair(cond.not_before_text_check("<")),
   Rule("=>", " {  }", {"typescript", "typescriptreact", "javascript", "rust"}):set_end_pair_length(2),
   --Space between () or [] or {}
   Rule(" ", " "):with_pair(
@@ -87,6 +89,3 @@ npairs.add_rules {
     end
   ):set_end_pair_length(0):with_move(cond.none()):with_del(cond.none())
 }
-
--- Disable '' for when it foresee <
-npairs.get_rule("'"):with_pair(cond.not_before_text_check("<"))
