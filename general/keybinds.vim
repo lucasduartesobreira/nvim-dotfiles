@@ -36,17 +36,6 @@ augroup Terminal
 autocmd BufWinEnter,WinEnter * nnoremap <buffer> <leader>nt :botright new <bar> :terminal <CR>
 augroup end
 
-function LuasnipCurrentNodeNil()
-    if luaeval("Luasnip_current_nodes==nil")
-        return 0
-    endif
-    :lua Luasnip_current_nodes[vim.fn.bufnr("%")]=nil
-endfunction
-
-augroup Sla
-autocmd BufWinEnter,WinEnter * inoremap <buffer> <Esc> <Esc>:call LuasnipCurrentNodeNil()<CR>
-augroup end
-
 " Vim integration
 nnoremap Y y$
 
