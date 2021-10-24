@@ -139,5 +139,23 @@ fun! CargoTestWArgs(args)
     execute to_execute
 endfunction
 
+fun! CargoTest()
+    call inputsave()
+    let ignored = confirm("Run ignored test?","&Yes\n&No",2) 
+    call inputrestore()
+
+    echo ignored
+
+    let to_execute = '!run_on_new_tab.sh Testing "cargo test'
+
+    if ignored == 1
+        let to_execute .= ' -- --ignored"'
+    else
+        let to_execute .= '"'
+    endif
+
+    execute to_execute
+endfunction
 
 command -nargs=* CargoTestWArgs call CargoTest('<args>')
+command -nargs=* CargoTest call CargoTest()
