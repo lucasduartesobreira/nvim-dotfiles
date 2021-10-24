@@ -34,5 +34,6 @@ require "lspconfig".sumneko_lua.setup {
         library = {[vim.fn.expand("$VIMRUNTIME/lua")] = true, [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true}
       }
     }
-  }
+  },
+  root_dir = require("lspconfig.util").root_pattern(".git")
 }
