@@ -5,6 +5,6 @@ local capabilities = require("lsp-server-configs/add-snippet").capabilities
 local on_attach = require "plug-config/lspsignature-config".on_attach
 
 require "lspconfig".pylsp.setup {
-  capabilities = capabilities,
+  capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities),
   on_attach = on_attach
 }

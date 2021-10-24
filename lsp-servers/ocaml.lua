@@ -7,7 +7,7 @@ local on_attach = require "plug-config/lspsignature-config".on_attach
 local lspconfig = require("lspconfig")
 
 lspconfig.ocamllsp.setup {
-  capabilities = capabilities,
+  capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities),
   on_attach = on_attach,
   root_dir = lspconfig.util.root_pattern("*.opam", "esy.json", "package.json", "dune")
 }
