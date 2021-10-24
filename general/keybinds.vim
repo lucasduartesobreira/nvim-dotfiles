@@ -121,3 +121,23 @@ fun! Rename()
 endfunction
 
 nnoremap <leader>fr :call Rename()
+
+fun! CargoTestWArgs(args)
+    let to_execute = '!run_on_new_tab.sh Testing "cargo test'
+    if len(a:args) != 0
+        let to_execute .= ' -- '
+        try
+            let split_args = split(a:args)
+            for i in split(a:args)
+                let to_execute .= '--' . i
+            endfor
+        endtry
+    endif 
+
+    let to_execute .= '"'
+
+    execute to_execute
+endfunction
+
+
+command -nargs=* CargoTestWArgs call CargoTest('<args>')
