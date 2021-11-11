@@ -1,1 +1,1 @@
-vim.cmd [[let g:dap_virtual_text = v:true]]
+require("nvim-dap-virtual-text").setup()
