@@ -16,9 +16,9 @@ cmp.setup(
     mapping = {
       ["<C-n>"] = cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Insert}),
       ["<C-p>"] = cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Insert}),
-      ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-      ["<C-f>"] = cmp.mapping.scroll_docs(4),
-      ["<C-Space>"] = cmp.mapping.complete(),
+      ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {"i", "c"}),
+      ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"}),
+      ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
       ["<C-y>"] = cmp.mapping.close(),
       ["<CR>"] = cmp.mapping.confirm({select = true}),
       ["<Tab>"] = cmp.mapping(
@@ -50,16 +50,31 @@ cmp.setup(
     },
     sources = {
       {name = "nvim_lsp"},
-      {name = "luasnip"},
-      {name = "buffer"},
+      {
+        name = "luasnip",
+        max_item_count = 4
+      },
+      {
+        name = "buffer",
+        max_item_count = 4
+      },
       {name = "path"},
       {
-        name = "cmp_tabnine"
-        --opts = {}
+        name = "cmp_tabnine",
+        max_item_count = 10
       },
-      {name = "spell"},
-      {name = "latex_symbols"},
-      {name = "emoji"}
+      {
+        name = "spell",
+        max_item_count = 5
+      },
+      {
+        name = "latex_symbols",
+        max_item_count = 10
+      },
+      {
+        name = "emoji",
+        max_item_count = 4
+      }
     },
     formatting = {
       format = require("lspkind").cmp_format(
@@ -68,7 +83,7 @@ cmp.setup(
           menu = ({
             buffer = "[Buffer]",
             path = "[Path]",
-            spell = "[Spell]",
+            --spell = "[Spell]",
             nvim_lsp = "[LSP]",
             luasnip = "[LuaSnip]",
             nvim_lua = "[Lua]",

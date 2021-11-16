@@ -5,7 +5,7 @@ local capabilities = require("lsp-server-configs/add-snippet").capabilities
 local on_attach = require "plug-config/lspsignature-config".on_attach
 
 require "lspconfig".rust_analyzer.setup {
-  capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities),
+  --capabilities = capabilities,
   on_attach = on_attach,
   settings = {
     ["rust-analyzer"] = {
