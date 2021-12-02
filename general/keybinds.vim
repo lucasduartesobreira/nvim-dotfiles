@@ -18,8 +18,8 @@ cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
-nnoremap <A-,> :split<CR><C-w>j " Horizontal split
-nnoremap <A-.> :vsplit<CR><C-w>l " Vertical split
+nnoremap <A-x> :split<CR><C-w>j " Horizontal split
+nnoremap <A-v> :vsplit<CR><C-w>l " Vertical split
 nnoremap <A-\> :close<CR>
 
 nnoremap <A-<> <C-w>K " Convert vertical to horizontal split
@@ -35,9 +35,6 @@ nnoremap <leader>lg <cmd>LazyGit<CR>
 augroup Terminal
 autocmd BufWinEnter,WinEnter * nnoremap <buffer> <leader>nt :botright new <bar> :terminal <CR>
 augroup end
-
-" Vim integration
-nnoremap Y y$
 
 " Keep centered
 nnoremap n nzzzv
