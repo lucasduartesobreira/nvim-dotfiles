@@ -14,7 +14,6 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-set hidden
 set number
 set relativenumber
 
