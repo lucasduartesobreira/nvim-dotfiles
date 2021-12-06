@@ -2,7 +2,7 @@ let g:loaded_python_provider = 0
 let g:loaded_ruby_provider = 0
 
 let g:python3_host_prog = '/usr/bin/python'
-let g:node_host_prog = '/usr/lib/node_modules/neovim'
+let g:node_host_prog = '/home/dots/.nvm/versions/node/v17.2.0/lib/node_modules/neovim'
 set clipboard+=unnamedplus 
 set tabstop=4
 set shiftwidth=4
