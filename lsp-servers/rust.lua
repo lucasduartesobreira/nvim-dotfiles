@@ -5,7 +5,10 @@ local capabilities = require("lsp-server-configs/add-snippet").capabilities
 local on_attach = require "plug-config/lspsignature-config".on_attach
 
 require "lspconfig".rust_analyzer.setup {
-  --capabilities = capabilities,
+  capabilities = capabilities,
+  cmd_env = {
+    RA_LOG = "rust_analyzer=error"
+  },
   on_attach = on_attach,
   settings = {
     ["rust-analyzer"] = {
