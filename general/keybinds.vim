@@ -25,6 +25,8 @@ nnoremap <A-\> :close<CR>
 nnoremap <A-<> <C-w>K " Convert vertical to horizontal split
 nnoremap <A->> <C-w>L " Convert horizontal to vertical split
 
+nnoremap <C-s> <cmd>w<CR>
+
 
 "Resource nvim
 nnoremap <leader>r <cmd>:source $MYVIMRC<CR>
