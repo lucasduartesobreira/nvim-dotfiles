@@ -49,6 +49,10 @@ cmp.setup(
       )
     },
     sources = {
+      {
+        name = "cmp_tabnine",
+        max_item_count = 2
+      },
       {name = "nvim_lsp"},
       {
         name = "luasnip",
@@ -59,10 +63,6 @@ cmp.setup(
         max_item_count = 4
       },
       {name = "path"},
-      {
-        name = "cmp_tabnine",
-        max_item_count = 10
-      },
       {
         name = "spell",
         max_item_count = 5
