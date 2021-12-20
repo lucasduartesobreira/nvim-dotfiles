@@ -83,7 +83,7 @@ cmp.setup(
           menu = ({
             buffer = "[Buffer]",
             path = "[Path]",
-            --spell = "[Spell]",
+            spell = "[Spell]",
             nvim_lsp = "[LSP]",
             luasnip = "[LuaSnip]",
             nvim_lua = "[Lua]",
