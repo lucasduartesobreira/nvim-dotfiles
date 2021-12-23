@@ -50,5 +50,5 @@ nnoremap <leader>tc :TodoTelescope<cr>
 "LSP Integration
 nnoremap <leader>gr <cmd>lua require('telescope.builtin').lsp_references()<cr>
 nnoremap <leader>gi <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
-nnoremap <leader>ld <cmd>lua require('telescope.builtin').lsp_document_diagnostics()<cr>
+nnoremap <leader>ld <cmd>Telescope diagnostics bufnr=0 <cr>
 nnoremap gd <cmd>lua require('telescope.builtin').lsp_definitions()<cr>
