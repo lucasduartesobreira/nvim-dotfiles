@@ -7,6 +7,34 @@ dap.adapters.lldb = {
   name = "lldb"
 }
 
+dap.adapters.node2 = {
+  type = "executable",
+  command = "node",
+  args = {os.getenv("HOME") .. "/projects/microsoft/vscode-node-debug2/out/src/nodeDebug.js"}
+}
+dap.configurations.typescript = {
+  {
+    name = "Launch",
+    type = "node2",
+    request = "launch",
+    --program = "${file}",
+    cwd = vim.fn.getcwd(),
+    sourceMaps = true,
+    protocol = "inspector",
+    console = "integratedTerminal",
+    outFiles = {"${workspaceFolder}/build/**/*.js"},
+    runtimeArgs = {"--nolazy", "-r", "ts-node/register"},
+    args = {"${file}", "--transpile-only"}
+  },
+  {
+    -- For this to work you need to make sure the node process is started with the `--inspect` flag.
+    name = "Attach to process",
+    type = "node2",
+    request = "attach",
+    processId = require "dap.utils".pick_process
+  }
+}
+
 dap.configurations.cpp = {
   {
     name = "Launch",
