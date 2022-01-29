@@ -137,3 +137,4 @@ vim.api.nvim_set_keymap("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>", 
 vim.api.nvim_set_keymap("n", "<leader>dl", ":lua require'dap'.run_last()<CR>", {silent = true})
 vim.api.nvim_set_keymap("n", "<leader>du", ":lua require'dap'.up()<CR>", {silent = true})
 vim.api.nvim_set_keymap("n", "<leader>dd", ":lua require'dap'.down()<CR>", {silent = true})
+vim.api.nvim_set_keymap("n", "<leader>dt", ":lua require'dap'.terminate()<CR>", {silent = true})
