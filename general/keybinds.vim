@@ -18,6 +18,9 @@ cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
+inoremap <A-w> <C-o>b
+inoremap <A-W> <C-o>w
+
 nnoremap <A-x> :split<CR><C-w>j " Horizontal split
 nnoremap <A-v> :vsplit<CR><C-w>l " Vertical split
 nnoremap <A-\> :close<CR>
