@@ -104,4 +104,8 @@ Plug 'folke/todo-comments.nvim'
 " WakaTime
 Plug 'wakatime/vim-wakatime'
 
+" Ultest
+Plug 'vim-test/vim-test'
+Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+
 call plug#end()
