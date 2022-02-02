@@ -23,7 +23,8 @@ dap.configurations.typescript = {
     protocol = "inspector",
     console = "integratedTerminal",
     runtimeArgs = {"--nolazy", "-r", "ts-node/register"},
-    args = {"${file}", "--transpile-only"}
+    args = {"${file}", "--transpile-only"},
+    skipFiles = {"<node_internals>/**", "node_modules/**"}
   },
   {
     -- For this to work you need to make sure the node process is started with the `--inspect` flag.
