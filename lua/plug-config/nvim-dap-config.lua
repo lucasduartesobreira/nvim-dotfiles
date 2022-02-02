@@ -22,7 +22,6 @@ dap.configurations.typescript = {
     sourceMaps = true,
     protocol = "inspector",
     console = "integratedTerminal",
-    outFiles = {"${workspaceFolder}/build/**/*.js"},
     runtimeArgs = {"--nolazy", "-r", "ts-node/register"},
     args = {"${file}", "--transpile-only"}
   },
