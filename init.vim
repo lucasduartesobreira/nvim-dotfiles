@@ -1,4 +1,3 @@
-source $HOME/.config/nvim/general/keybinds.vim
 source $HOME/.config/nvim/general/windows.vim
 source $HOME/.config/nvim/general/configs.vim
 "source $HOME/.config/nvim/plug-config/polyglot.vim
@@ -64,4 +63,8 @@ luafile $HOME/.config/nvim/lua/plug-config/nvim-colorizer-config.lua
 luafile $HOME/.config/nvim/lua/plug-config/todo-comments-config.lua
 
 
+" Keybinds
 source $HOME/.config/nvim/general/keybinds.vim
+
+" Vim-ultest
+source $HOME/.config/nvim/plug-config/vim-ultest.vim
