@@ -1,11 +1,7 @@
 local dap = require("dap")
 
 --RUST/C/C++ CONFIGS
-dap.adapters.lldb = {
-  type = "executable",
-  command = "lldb-vscode", -- adjust as needed
-  name = "lldb"
-}
+dap.adapters.codelldb = require("dots.dap.rust_utils").adapter
 
 dap.adapters.node2 = {
   type = "executable",
@@ -37,31 +33,31 @@ dap.configurations.typescript = {
 
 dap.configurations.cpp = {
   {
-    name = "Launch",
-    type = "lldb",
+    name = "Launch file",
+    type = "codelldb",
     request = "launch",
     program = function()
       return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
     end,
     cwd = "${workspaceFolder}",
-    stopOnEntry = false,
-    args = {},
-    -- if you change `runInTerminal` to true, you might need to change the yama/ptrace_scope setting:
-    --
-    --    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
-    --
-    -- Otherwise you might get the following error:
-    --
-    --    Error on launch: Failed to attach to the target process
-    --
-    -- But you should be aware of the implications:
-    -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
-    runInTerminal = false
+    stopOnEntry = true
   }
 }
 
 dap.configurations.c = dap.configurations.cpp
-dap.configurations.rust = dap.configurations.cpp
+dap.configurations.rust = {
+  {
+    name = "Launch build",
+    type = "codelldb",
+    request = "launch",
+    cargo = {
+      args = {"build"}
+    },
+    cwd = "${workspaceFolder}",
+    stopOnEntry = true
+  },
+  dap.configurations.cpp[1]
+}
 
 --GO CONFIGS
 dap.adapters.go = function(callback, _)
