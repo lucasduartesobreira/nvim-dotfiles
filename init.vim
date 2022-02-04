@@ -68,3 +68,4 @@ source $HOME/.config/nvim/general/keybinds.vim
 
 " Vim-ultest
 source $HOME/.config/nvim/plug-config/vim-ultest.vim
+luafile $HOME/.config/nvim/lua/plug-config/vim-ultest.lua
