@@ -62,11 +62,20 @@ require("formatter").setup(
   }
 )
 
+--Option to format write or just write
 vim.api.nvim_exec(
   [[
+let g:enable_auto_format_write = 1
+function! FormatWriteConditional()
+    if g:enable_auto_format_write
+        execute 'FormatWrite'
+    else
+        execute 'w'
+    endif
+endfunction
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.js,*.ts,*.rs,*.lua,*.go FormatWrite
+  autocmd BufWritePost *.js,*.ts,*.rs,*.lua,*.go call FormatWriteConditional()
 augroup END
 ]],
   true
