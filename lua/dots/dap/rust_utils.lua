@@ -23,8 +23,8 @@ local get_cargo_args = function(args)
   return result
 end
 
-local createFinalConfigWithCargo = function(config)
-  local utils = require("telescope.utils")
+local executeCargoCommand = function(config)
+  local utils = require("dots.utils")
   local cargoArgs = get_cargo_args(config.cargo)
   local command = vim.deepcopy(cargoArgs)
   table.insert(command, 1, "cargo")
@@ -35,55 +35,61 @@ local createFinalConfigWithCargo = function(config)
     return {}
   end
 
-  for _, value in pairs(result) do
-    local json = vim.fn.json_decode(value)
-    if type(json) == "table" and json.executable ~= vim.NIL and json.executable ~= nil then
-      if config.cargo.filter ~= nil and config.cargo.filter ~= vim.NIL then
-        local passFilter = true
-        for filterKey, filterValue in pairs(config.cargo.filter) do
-          if filterValue ~= json.target[filterKey] then
-            passFilter = false
-            break
-          end
-        end
+  return result
+end
 
-        if passFilter then
-          return {
-            name = config.name,
-            type = config.type,
-            request = "launch",
-            program = json.executable,
-            args = config.cargo.executableArgs or {},
-            cwd = config.cwd,
-            stopOnEntry = config.stopOnEntry or true,
-            runInTerminal = config.runInTerminal or false
-          }
-        end
-      else
-        return {
-          name = config.name,
-          type = config.type,
-          request = "launch",
-          program = json.executable,
-          args = config.cargo.executableArgs or {},
-          cwd = config.cwd,
-          stopOnEntry = config.stopOnEntry or true,
-          runInTerminal = config.runInTerminal or false
-        }
+local passFilter = function(jsonCargoResponse, config)
+  for filterKey, filterValue in pairs(config.cargo.filter) do
+    if filterValue ~= jsonCargoResponse.target[filterKey] then
+      return false
+    end
+  end
+  return true
+end
+
+local notNil = function(item)
+  return item ~= nil and item ~= vim.NIL
+end
+
+local isNil = function(item)
+  return not notNil(item)
+end
+
+local createFinalConfigWithCargo = function(config)
+  local cargoResponse = executeCargoCommand(config)
+  for _, value in pairs(cargoResponse) do
+    local jsonCargoResponse = vim.fn.json_decode(value)
+    if type(jsonCargoResponse) == "table" and notNil(jsonCargoResponse.executable) then
+      local possible_final_config = {
+        name = config.name,
+        type = config.type,
+        request = "launch",
+        program = jsonCargoResponse.executable,
+        args = config.cargo.executableArgs or {},
+        cwd = config.cwd,
+        stopOnEntry = config.stopOnEntry or true,
+        runInTerminal = config.runInTerminal or false
+      }
+      if isNil(config.cargo.filter) then
+        return possible_final_config
+      end
+
+      if passFilter(jsonCargoResponse, config) then
+        return possible_final_config
       end
     end
   end
-  vim.notify "No executable passed the filters"
+  vim.notify "No executable found"
   return {}
 end
 
 local enrich_function = function(config, on_config)
   local final_config
-  if config.cargo ~= nil and config.cargo ~= vim.NIL then
+  if notNil(config.cargo) then
     final_config = createFinalConfigWithCargo(config)
   end
 
-  if final_config == nil or final_config == vim.NIL then
+  if isNil(final_config) then
     final_config = vim.deepcopy(config)
   end
 
