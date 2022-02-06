@@ -66,6 +66,18 @@ require("formatter").setup(
 vim.api.nvim_exec(
   [[
 let g:enable_auto_format_write = 1
+function! ToggleAutoFormatWrite()
+    if g:enable_auto_format_write
+        let g:enable_auto_format_write = 0
+        echom "Auto format at write disabled"
+    else
+        let g:enable_auto_format_write = 1
+        echom "Auto format at write enabled"
+    endif
+endfunction
+
+command ToggleAutoFormatWrite call ToggleAutoFormatWrite()
+
 function! FormatWriteConditional()
     if g:enable_auto_format_write
         execute 'FormatWrite'
