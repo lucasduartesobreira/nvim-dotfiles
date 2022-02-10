@@ -76,7 +76,7 @@ function! ToggleAutoFormatWrite()
     endif
 endfunction
 
-command ToggleAutoFormatWrite call ToggleAutoFormatWrite()
+command! ToggleAutoFormatWrite call ToggleAutoFormatWrite()
 
 function! FormatWriteConditional()
     if g:enable_auto_format_write
