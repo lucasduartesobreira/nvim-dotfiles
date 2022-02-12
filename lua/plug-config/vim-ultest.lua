@@ -30,7 +30,7 @@ require("ultest").setup(
               args = {"test", test_name},
               executableArgs = {test_name, "--exact", "--include-ignored"},
               filter = {
-                src_path = vim.fn.expand("%:p")
+                kind = {"lib"}
               }
             },
             cwd = "${workspaceFolder}",
