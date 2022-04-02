@@ -19,7 +19,9 @@ luafile $HOME/.config/nvim/lua/plug-config/gitsigns-config.lua
 
 
 " Theme
-luafile $HOME/.config/nvim/lua/theme/github-theme.lua
+"luafile $HOME/.config/nvim/lua/theme/github-theme.lua
+luafile $HOME/.config/nvim/lua/theme/nightfox.lua
+luafile $HOME/.config/nvim/lua/theme/lualine.lua
 
 "Format
 luafile $HOME/.config/nvim/plug-config/formatter.lua
@@ -31,6 +33,7 @@ luafile $HOME/.config/nvim/lua/plug-config/spellsitter-config.lua
 "LSP
 source $HOME/.config/nvim/plug-config/lsp-config.vim
 source $HOME/.config/nvim/lsp-servers/setup-all.vim
+source $HOME/.config/nvim/lua/plug-config/lsp-config.lua
 
 "Compe
 luafile $HOME/.config/nvim/lua/plug-config/nvim-cmp-config.lua

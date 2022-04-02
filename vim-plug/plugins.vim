@@ -19,7 +19,10 @@ Plug 'tpope/vim-repeat'
 Plug 'akinsho/nvim-bufferline.lua'
 
 " GitHub Theme
-Plug 'projekt0n/github-nvim-theme'
+"Plug 'projekt0n/github-nvim-theme'
+
+" NightFox Theme
+Plug 'EdenEast/nightfox.nvim'
 
 " Lualine
 Plug 'hoob3rt/lualine.nvim'
