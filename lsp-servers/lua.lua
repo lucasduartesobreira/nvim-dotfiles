@@ -11,7 +11,13 @@ sumneko_binary = "/home/" .. USER .. "/lua-language-server/bin/Linux/lua-languag
 local capabilities = require("lsp-server-configs/add-snippet").capabilities
 
 --lsp_signature config
-local on_attach = require("plug-config/lspsignature-config").on_attach
+local lsp_signature_attach = require("plug-config/lspsignature-config").on_attach
+local lsp_format_attach = require("lsp-format").on_attach
+
+function on_attach(client, bufnr)
+  lsp_signature_attach(client, bufnr)
+  lsp_format_attach(client)
+end
 
 require "lspconfig".sumneko_lua.setup {
   capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities),

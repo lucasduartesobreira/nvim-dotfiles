@@ -118,7 +118,14 @@ local formatters = {
   }
 }
 
+local lsp_format_attach = require("lsp-format").on_attach
+
+function on_attach(client, bufnr)
+  lsp_format_attach(client)
+end
+
 require "lspconfig".diagnosticls.setup {
+  on_attach = on_attach,
   filetypes = {"javascript", "typescript", "go", "lua"},
   cmd = {"diagnostic-languageserver", "--stdio", "--log-level", "2"},
   init_options = {
