@@ -8,7 +8,7 @@ end
 
 local eslintFmt = function()
   return {
-    exe = "npx eslint",
+    exe = "eslint_d",
     args = {"--stdin", "--stdin-filename", vim.api.nvim_buf_get_name(0), "--fix-dry-run"},
     stdin = true
   }

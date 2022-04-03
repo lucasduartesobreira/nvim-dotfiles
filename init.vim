@@ -24,7 +24,7 @@ luafile $HOME/.config/nvim/lua/theme/nightfox.lua
 luafile $HOME/.config/nvim/lua/theme/lualine.lua
 
 "Format
-luafile $HOME/.config/nvim/plug-config/formatter.lua
+"luafile $HOME/.config/nvim/plug-config/formatter.lua
 
 "TreeSitter
 luafile $HOME/.config/nvim/plug-config/nvim-treesitter.lua

@@ -30,8 +30,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 
 " Format
-Plug 'mhartington/formatter.nvim'
-
+"Plug 'mhartington/formatter.nvim'
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'ray-x/lsp_signature.nvim'
