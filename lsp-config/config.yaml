@@ -1,0 +1,83 @@
+lint-debounce: 1s
+root-markers:
+  - .git
+  - .git/
+tools:
+  eslint-lint: &eslint-lint
+    prefix: eslint_d
+    lint-debounce: 1s
+    lint-command: 'eslint_d -f unix --stdin --stdin-filename ${INPUT} --cache'
+    lint-ignore-exit-code: true
+    lint-stdin: true
+    lint-formats:
+      - '%f:%l:%c: %m'
+    format-command: 'eslint_d --fix-to-stdout --stdin --stdin-filename ${INPUT}'
+    format-stdin: true
+    require-marker: true
+    root-markers:
+      - .eslintrc.js
+      - .eslintrc.yaml
+      - .eslintrc.yml
+      - .eslintrc.json
+  golangci-lint: &golangci-lint
+    lint-command: 'golangci-lint run'
+    lint-source: 'golangci-lint'
+    lint-ignore-exit-code: true
+    lint-severity: 2
+    root-markers:
+      - go.mod
+  prettier: &prettier
+    format-command: 'prettier --stdin --stdin-filepath ${INPUT}'
+    format-stdin: true
+    root-markers:
+      - .prettierrc
+      - .prettierrc.json
+      - .prettierrc.toml
+      - .prettierrc.json
+      - .prettierrc.yml
+      - .prettierrc.yaml
+      - .prettierrc.json5
+      - .prettierrc.js
+      - .prettierrc.cjs
+      - .prettierignore
+      - prettier.config.js
+      - prettier.config.cj
+    require-marker: true
+  standard: &standard
+    prefix: 'standard'
+    lint-command: './node_modules/.bin/standard --stdin'
+    lint-stdin: true
+    lint-formats:
+      - '%.%#:%l:%c: %m'
+    format-command: './node_modules/.bin/standard --stdin --fix'
+    format-stdin: true
+    root-markers:
+      - .run_standard
+    require-marker: true
+  luafmt: &luafmt
+    format-command: 'luafmt --indent-count 2 --stdin'
+    format-stdin: true
+  gofmt: &gofmt
+    format-command: 'gofmt -s'
+    format-stdin: true
+    root-markers:
+      - go.mod
+  goimports: &goimports
+    format-command: 'goimports'
+    format-stdin: true
+    root-markers:
+      - go.mod
+languages:
+  javascript:
+    - <<: *standard
+    - <<: *eslint-lint
+    - <<: *prettier
+  typescript:
+    - <<: *eslint-lint
+    - <<: *prettier
+  go:
+    - <<: *golangci-lint
+    - <<: *gofmt
+    - <<: *goimports
+  lua:
+    - <<: *luafmt
