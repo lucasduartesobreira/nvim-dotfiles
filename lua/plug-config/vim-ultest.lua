@@ -39,6 +39,26 @@ require("ultest").setup(
             sourceLanguages = {"rust"}
           }
         }
+      end,
+      ["javascript#jest"] = function(cmd)
+        print(vim.inspect(cmd))
+        table.insert(cmd, 2, "--runInBand")
+        table.insert(cmd, 3, "--detectOpenHandles")
+        table.insert(cmd, 4, "--forceExit")
+        return {
+          dap = {
+            name = "Launch",
+            type = "node2",
+            request = "launch",
+            cwd = vim.fn.getcwd(),
+            protocol = "inspector",
+            console = "integratedTerminal",
+            sourceMaps = true,
+            runtimeArgs = {"--inspect-brk"},
+            args = cmd,
+            port = 9229
+          }
+        }
       end
     }
   }
