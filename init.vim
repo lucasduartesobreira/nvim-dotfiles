@@ -1,5 +1,6 @@
-source $HOME/.config/nvim/general/windows.vim
-source $HOME/.config/nvim/general/configs.vim
+"source $HOME/.config/nvim/general/windows.vim
+"source $HOME/.config/nvim/general/configs.vim
+luafile $HOME/.config/nvim/_init.lua
 "source $HOME/.config/nvim/plug-config/polyglot.vim
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/plug-config/nerd-commenter.vim
