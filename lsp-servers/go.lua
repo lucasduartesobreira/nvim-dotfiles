@@ -2,11 +2,11 @@
 local capabilities = require("lsp-server-configs/add-snippet").capabilities
 
 --lsp_signature config
-local lsp_signature_attach = require("plug-config/lspsignature-config").on_attach
+--local lsp_signature_attach = require("plug-config/lspsignature-config").on_attach
 local lsp_format_attach = require("lsp-format").on_attach
 
 function on_attach(client, bufnr)
-  lsp_signature_attach(client, bufnr)
+  --lsp_signature_attach(client, bufnr)
   lsp_format_attach(client)
 end
 
