@@ -2,7 +2,7 @@
 "source $HOME/.config/nvim/general/configs.vim
 luafile $HOME/.config/nvim/_init.lua
 "source $HOME/.config/nvim/plug-config/polyglot.vim
-source $HOME/.config/nvim/vim-plug/plugins.vim
+"source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/plug-config/nerd-commenter.vim
 "source $HOME/.config/nvim/themes/airline.vim
 "source $HOME/.config/nvim/themes/theme.vim
@@ -45,7 +45,7 @@ luafile $HOME/.config/nvim/lua/plug-config/luasnip-config.lua
 luafile $HOME/.config/nvim/lua/plug-config/bufferline-config.lua
 
 " Discord Rich Presence
-luafile $HOME/.config/nvim/lua/plug-config/rich-presence-config.lua
+"luafile $HOME/.config/nvim/lua/plug-config/rich-presence-config.lua
 
 " Autopairs
 luafile $HOME/.config/nvim/lua/plug-config/nvim-autopairs-config.lua
@@ -59,13 +59,12 @@ luafile $HOME/.config/nvim/lua/plug-config/nvim-dap-ui-config.lua
 "luafile $HOME/.config/nvim/lua/plug-config/tmux-config.lua
 
 " LSP ROOTER
-luafile $HOME/.config/nvim/lua/plug-config/lsp-rooter.lua
+"luafile $HOME/.config/nvim/lua/plug-config/lsp-rooter.lua
 
 " Colorizer
 luafile $HOME/.config/nvim/lua/plug-config/nvim-colorizer-config.lua
 
 " Todo Comments
-luafile $HOME/.config/nvim/lua/plug-config/todo-comments-config.lua
 
 
 " Keybinds
