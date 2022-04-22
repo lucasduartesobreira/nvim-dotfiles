@@ -4,16 +4,16 @@ call plug#begin(stdpath('data'))
 Plug 'tpope/vim-surround'
 "Plug 'Raimondi/delimitMate'
 "Plug 'vim-airline/vim-airline'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 "Plug 'vim-airline/vim-airline-themes'
 "Plug 'rafi/awesome-vim-colorschemes'
 Plug 'preservim/nerdcommenter'
 "Plug 'airblade/vim-gitgutter'
 "Plug 'ryanoasis/vim-devicons'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'tpope/vim-fugitive'
-Plug 'gotchane/vim-git-commit-prefix'
-Plug 'tpope/vim-repeat'
+"Plug 'tpope/vim-fugitive'
+"Plug 'gotchane/vim-git-commit-prefix'
+"Plug 'tpope/vim-repeat'
 
 " BufferLine
 Plug 'akinsho/nvim-bufferline.lua'
@@ -79,7 +79,7 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 " Discord Rich Presence
-Plug 'andweeb/presence.nvim'
+"Plug 'andweeb/presence.nvim'
 
 " LazyGit
 Plug 'kdheepak/lazygit.nvim'
@@ -102,7 +102,7 @@ Plug 'ahmedkhalf/lsp-rooter.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 
 " Todo comments
-Plug 'folke/todo-comments.nvim'
+"Plug 'folke/todo-comments.nvim'
 
 " WakaTime
 Plug 'wakatime/vim-wakatime'
