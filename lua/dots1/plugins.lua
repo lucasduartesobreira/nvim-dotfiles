@@ -53,43 +53,6 @@ return packer.startup(
     use "windwp/nvim-autopairs"
     --use 'gotchane/vim-git-commit-prefix' lazyload at vim commits
 
-    -- Theme
-    use "EdenEast/nightfox.nvim"
-
-    -- Buffer and status line
-    use { "akinsho/nvim-bufferline.lua", requires = { "kyazdani42/nvim-web-devicons" } }
-    use { "hoob3rt/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } }
-
-    -- TODO: Make LSPCONFIG and everything of lsp just load when a server is setted up
-    -- LSP Plugins
-    use "neovim/nvim-lspconfig"
-    use "lukas-reineke/lsp-format.nvim"
-
-    -- Snippets
-    use "L3MON4D3/LuaSnip"
-    use "rafamadriz/friendly-snippets"
-
-    -- Nvim Compe
-    use {
-      "hrsh7th/nvim-cmp",
-      as = 'cmp',
-      requires = {
-        { "hrsh7th/cmp-emoji", opt = true },
-        { "kdheepak/cmp-latex-symbols", opt = true, ft = "tex" },
-        { "onsails/lspkind-nvim" },
-        { "hrsh7th/cmp-nvim-lsp" },
-        { "hrsh7th/cmp-buffer" },
-        { "saadparwaiz1/cmp_luasnip" },
-        { "hrsh7th/cmp-path" },
-        { "f3fora/cmp-spell" },
-        { "hrsh7th/cmp-nvim-lsp-signature-help" },
-        { "tzachar/cmp-tabnine", run = "./install.sh" }
-      }
-    }
-
-    -- Markdown preview
-    use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" }
-
     -- Treesitter
     use {
       "nvim-treesitter/nvim-treesitter",
@@ -103,6 +66,44 @@ return packer.startup(
         { "RRethy/nvim-treesitter-textobjects" }
       }
     }
+
+    -- TODO: Make LSPCONFIG and everything of lsp just load when a server is setted up
+    -- LSP Plugins
+    use "neovim/nvim-lspconfig"
+    use "lukas-reineke/lsp-format.nvim"
+
+    -- Nvim Compe
+    use {
+      "hrsh7th/nvim-cmp",
+      as = 'cmp',
+      requires = {
+        { "hrsh7th/cmp-emoji", opt = true },
+        { "kdheepak/cmp-latex-symbols", opt = true, ft = "tex" },
+        { "onsails/lspkind-nvim" },
+        { "hrsh7th/cmp-nvim-lsp", requires = { 'neovim/nvim-lspconfig' } },
+        { "hrsh7th/cmp-buffer" },
+        { "saadparwaiz1/cmp_luasnip" },
+        { "hrsh7th/cmp-path" },
+        { "f3fora/cmp-spell" },
+        { "hrsh7th/cmp-nvim-lsp-signature-help" },
+        { "tzachar/cmp-tabnine", run = "./install.sh" }
+      }
+    }
+    -- Theme
+    use "EdenEast/nightfox.nvim"
+
+    -- Buffer and status line
+    use { "akinsho/nvim-bufferline.lua", requires = { "kyazdani42/nvim-web-devicons" } }
+    use { "hoob3rt/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } }
+
+
+    -- Snippets
+    use "L3MON4D3/LuaSnip"
+    use "rafamadriz/friendly-snippets"
+
+
+    -- Markdown preview
+    use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" }
 
     use {
       "nvim-telescope/telescope.nvim",
