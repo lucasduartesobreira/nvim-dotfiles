@@ -1,9 +1,9 @@
-local status_cmp_ok, cmp = pcall('cmp')
+local status_cmp_ok, cmp = pcall(require, 'cmp')
 if not status_cmp_ok then
   return
 end
 
-local status_luasnip_ok, luasnip = pcall('luasnip')
+local status_luasnip_ok, luasnip = pcall(require, 'luasnip')
 if not status_luasnip_ok then
   return
 end
