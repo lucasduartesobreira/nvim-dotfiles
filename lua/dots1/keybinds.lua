@@ -36,6 +36,9 @@ keymap("n", "<A-x>", ":split<CR><C-w>j", opts)
 keymap("n", "<A-v>", ":vsplit<CR><C-w>l", opts)
 keymap("n", "<A-\\>", ":close<CR>", opts)
 
+keymap("n", "gn", "o<esc>",opts)
+keymap("n", "gN", "O<esc>",opts)
+
 -- save with control+s
 keymap("n", "<C-s>", "<cmd>w<CR>", opts)
 
