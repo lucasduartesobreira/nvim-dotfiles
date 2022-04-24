@@ -4,7 +4,10 @@ return {
   },
   settings = {
     ["rust-analyzer"] = {
-      checkOnSave = { command = "clippy" }
+      checkOnSave = {command = "clippy"},
+      procMacro = {
+        enable = true
+      }
     }
   }
 }
