@@ -56,29 +56,22 @@ return packer.startup(
     -- Treesitter
     use {
       "nvim-treesitter/nvim-treesitter",
-      run = ":TSUpdate",
-      requires = {
-        { "p00f/nvim-ts-rainbow" },
-        { "lewis6991/spellsitter.nvim" },
-        { "nvim-treesitter/playground" },
-        { "windwp/nvim-ts-autotag" },
-        { "RRethy/nvim-treesitter-textsubjects" },
-        { "RRethy/nvim-treesitter-textobjects" }
-      }
+      run = ":TSUpdate"
     }
-
     -- TODO: Make LSPCONFIG and everything of lsp just load when a server is setted up
     -- LSP Plugins
     use "neovim/nvim-lspconfig"
     use "lukas-reineke/lsp-format.nvim"
+
+    -- Snippets
+    use "L3MON4D3/LuaSnip"
+    use "rafamadriz/friendly-snippets"
 
     -- Nvim Compe
     use {
       "hrsh7th/nvim-cmp",
       as = 'cmp',
       requires = {
-        { "hrsh7th/cmp-emoji", opt = true },
-        { "kdheepak/cmp-latex-symbols", opt = true, ft = "tex" },
         { "onsails/lspkind-nvim" },
         { "hrsh7th/cmp-nvim-lsp", requires = { 'neovim/nvim-lspconfig' } },
         { "hrsh7th/cmp-buffer" },
@@ -93,23 +86,15 @@ return packer.startup(
     use "EdenEast/nightfox.nvim"
 
     -- Buffer and status line
-    use { "akinsho/nvim-bufferline.lua", requires = { "kyazdani42/nvim-web-devicons" } }
-    use { "hoob3rt/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } }
-
-
-    -- Snippets
-    use "L3MON4D3/LuaSnip"
-    use "rafamadriz/friendly-snippets"
-
 
     -- Markdown preview
-    use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" }
 
     use {
       "nvim-telescope/telescope.nvim",
       requires = {
         { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-        { "nvim-telescope/telescope-file-browser.nvim" }
+        { "nvim-telescope/telescope-file-browser.nvim" },
+        { "kyazdani42/nvim-web-devicons" }
       }
     }
 
@@ -117,18 +102,9 @@ return packer.startup(
     use "lewis6991/gitsigns.nvim"
     use "kdheepak/lazygit.nvim"
 
-    -- Test and Debugging
-    use "mfussenegger/nvim-dap"
-    use "rcarriga/nvim-dap-ui"
-    use "theHamsta/nvim-dap-virtual-text"
-    use "vim-test/vim-test"
-    use { "rcarriga/vim-ultest", run = ":UpdateRemotePlugins" }
-
     -- Wakatime
-    use "wakatime/vim-wakatime"
 
     -- Colorizer
-    use "norcalli/nvim-colorizer.lua"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
