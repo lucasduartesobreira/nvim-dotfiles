@@ -69,8 +69,10 @@ keymap("n", "<C-f>", "<C-f>zz", opts)
 keymap("n", "<C-b>", "<C-b>zz", opts)
 
 -- Jumplist mutations
-keymap("n", "k", '(v:count > 5 ? "m\'" . v:count : "") . \'k\'', {expr = true})
-keymap("n", "j", '(v:count > 5 ? "m\'" . v:count : "") . \'j\'', {expr = true})
+--[[
+   [keymap("n", "k", '(v:count > 5 ? "m\'" . v:count : "") . \'k\'', {expr = true})
+   [keymap("n", "j", '(v:count > 5 ? "m\'" . v:count : "") . \'j\'', {expr = true})
+   ]]
 
 -- Move text
 keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
