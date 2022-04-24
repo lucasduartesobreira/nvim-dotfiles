@@ -49,6 +49,7 @@ tools:
     lint-stdin: true
     lint-formats:
       - '%.%#:%l:%c: %m'
+    lint-ignore-exit-code: true
     format-command: './node_modules/.bin/standard --stdin --fix'
     format-stdin: true
     root-markers:
