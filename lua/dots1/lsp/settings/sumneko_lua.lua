@@ -10,7 +10,7 @@ return {
   on_attach = function(client)
     client.resolved_capabilities.document_formatting = false
   end,
-  cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
+  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
   settings = {
     Lua = {
       runtime = {
@@ -21,11 +21,11 @@ return {
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = { "vim" }
+        globals = {"vim"}
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
-        library = { [vim.fn.expand("$VIMRUNTIME/lua")] = true, [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true }
+        library = {[vim.fn.expand("$VIMRUNTIME/lua")] = true, [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true}
       }
     }
   },
