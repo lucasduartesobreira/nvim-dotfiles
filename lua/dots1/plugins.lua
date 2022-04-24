@@ -56,7 +56,11 @@ return packer.startup(
     -- Treesitter
     use {
       "nvim-treesitter/nvim-treesitter",
-      run = ":TSUpdate"
+      run = ":TSUpdate",
+      requires = {
+        {'nvim-treesitter/nvim-treesitter-textobjects'},
+        {'RRethy/nvim-treesitter-textsubjects'}
+      }
     }
     -- TODO: Make LSPCONFIG and everything of lsp just load when a server is setted up
     -- LSP Plugins
