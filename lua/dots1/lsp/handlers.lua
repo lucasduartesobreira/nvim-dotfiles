@@ -6,8 +6,8 @@ end
 lsp_format.setup {}
 
 local function mappings(bufnr)
-  local opts = {noremap = true, silent = true, buffer = bufnr}
-  local keymap = vim.api.nvim_set_keymap
+  local opts = { noremap = true, silent = true, buffer = bufnr }
+  local keymap = vim.keymap.set
   keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   --keymap("n", "<S-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
@@ -33,7 +33,7 @@ local function highlight_document(client)
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-    ]],
+    ]] ,
       false
     )
   end
@@ -43,14 +43,14 @@ local M = {}
 
 M.setup = function()
   local signs = {
-    {name = "DiagnosticSignError", text = ""},
-    {name = "DiagnosticSignWarn", text = ""},
-    {name = "DiagnosticSignHint", text = ""},
-    {name = "DiagnosticSignInfo", text = ""}
+    { name = "DiagnosticSignError", text = "" },
+    { name = "DiagnosticSignWarn", text = "" },
+    { name = "DiagnosticSignHint", text = "" },
+    { name = "DiagnosticSignInfo", text = "" }
   }
 
   for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, {texthl = sign.name, text = sign.text, numhl = ""})
+    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
   end
 
   local config = {
@@ -75,16 +75,14 @@ M.setup = function()
 
   vim.diagnostic.config(config)
 
-  vim.lsp.handlers["textDocument/hover"] =
-    vim.lsp.with(
+  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
     vim.lsp.handlers.hover,
     {
       border = "rounded"
     }
   )
 
-  vim.lsp.handlers["textDocument/signatureHelp"] =
-    vim.lsp.with(
+  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     vim.lsp.handlers.signature_help,
     {
       border = "rounded"
@@ -102,7 +100,7 @@ M.build_on_attach = function(...)
   if select("#", ...) == 0 then
     return on_attach
   end
-  local on_attachs = {...}
+  local on_attachs = { ... }
   local base_on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     for _, v in pairs(on_attachs) do
