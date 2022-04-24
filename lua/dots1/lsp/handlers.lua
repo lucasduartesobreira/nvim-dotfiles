@@ -3,6 +3,8 @@ if not is_format_ok then
   return
 end
 
+lsp_format.setup {}
+
 local function mappings()
   local opts = { noremap = true, silent = true }
   local keymap = vim.api.nvim_set_keymap
