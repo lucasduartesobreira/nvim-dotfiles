@@ -59,7 +59,6 @@ return {
       end,
       opts
     )
-    map("n", "<leader>tb", gs.toggle_current_line_blame, opts)
     map("n", "<leader>hd", gs.diffthis, opts)
     map(
       "n",
