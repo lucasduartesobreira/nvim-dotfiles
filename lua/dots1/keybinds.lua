@@ -46,7 +46,17 @@ keymap("n", "<C-s>", "<cmd>w<CR>", opts)
 keymap("n", "gm", "`", opts)
 
 -- Resource nvim
-keymap("n", "<leader>r", "<cmd>:source $MYVIMRC<CR>", opts)
+local is_plenary_ok, plenary_reload = pcall(require, "plenary.reload")
+if is_plenary_ok then
+  vim.keymap.set(
+    "n",
+    "<leader>r",
+    function()
+      plenary_reload.reload_module("dots1", true)
+      vim.cmd [[source $MYVIMRC]]
+    end
+  )
+end
 
 -- Lazygit
 keymap("n", "<leader>lg", "<cmd>LazyGit<CR>", opts)
