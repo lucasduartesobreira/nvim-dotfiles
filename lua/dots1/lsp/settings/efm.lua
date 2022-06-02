@@ -19,6 +19,6 @@ return {
     )
   end,
   filetypes = {"javascript", "typescript", "go", "lua"},
-  cmd = {"efm-langserver", "-c", efm_config_path},
+  cmd = {"efm-langserver", "-c", efm_config_path, "-q"},
   init_options = {documentFormatting = true, publishDiagnostics = true}
 }
