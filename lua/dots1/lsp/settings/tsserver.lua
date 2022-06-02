@@ -8,7 +8,8 @@ return {
     preferences = {
       allowIncompleteCompletions = true,
       includeCompletionsForModuleExports = false
-    }
+    },
+    maxTsServerMemory = 6144
   },
   flags = {
     debounce_text_changes = 500,
