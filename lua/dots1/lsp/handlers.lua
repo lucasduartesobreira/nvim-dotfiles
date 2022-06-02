@@ -3,10 +3,14 @@ if not is_format_ok then
   return
 end
 
-lsp_format.setup {}
+lsp_format.setup {
+  exclude = {
+    "tsserver"
+  }
+}
 
 local function mappings(bufnr)
-  local opts = { noremap = true, silent = true, buffer = bufnr }
+  local opts = {noremap = true, silent = true, buffer = bufnr}
   local keymap = vim.keymap.set
   keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
@@ -16,7 +20,7 @@ local function mappings(bufnr)
   keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
   keymap("n", "<leader>sdl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   -- Telescope binds
-  keymap("n", "<cr>", "<cmd>lua require('telescope.builtin').lsp_code_actions({timeout = 1000})<cr>", opts)
+  keymap("n", "<cr>", "<cmd>lua vim.lsp.buf.code_action({timeout=2000})<cr>", opts)
   keymap("n", "<leader>gr", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", opts)
   keymap("n", "<leader>gi", "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>", opts)
   keymap("n", "<leader>ld", "<cmd>Telescope diagnostics bufnr=0 <cr>", opts)
@@ -33,7 +37,7 @@ local function highlight_document(client)
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-    ]] ,
+    ]],
       false
     )
   end
@@ -43,14 +47,14 @@ local M = {}
 
 M.setup = function()
   local signs = {
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" }
+    {name = "DiagnosticSignError", text = ""},
+    {name = "DiagnosticSignWarn", text = ""},
+    {name = "DiagnosticSignHint", text = ""},
+    {name = "DiagnosticSignInfo", text = ""}
   }
 
   for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+    vim.fn.sign_define(sign.name, {texthl = sign.name, text = sign.text, numhl = ""})
   end
 
   local config = {
@@ -75,14 +79,16 @@ M.setup = function()
 
   vim.diagnostic.config(config)
 
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers["textDocument/hover"] =
+    vim.lsp.with(
     vim.lsp.handlers.hover,
     {
       border = "rounded"
     }
   )
 
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers["textDocument/signatureHelp"] =
+    vim.lsp.with(
     vim.lsp.handlers.signature_help,
     {
       border = "rounded"
@@ -93,14 +99,14 @@ end
 local on_attach = function(client, bufnr)
   mappings(bufnr)
   highlight_document(client)
-  lsp_format.on_attach(client, bufnr)
+  lsp_format.on_attach(client)
 end
 
 M.build_on_attach = function(...)
   if select("#", ...) == 0 then
     return on_attach
   end
-  local on_attachs = { ... }
+  local on_attachs = {...}
   local base_on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     for _, v in pairs(on_attachs) do
