@@ -9,6 +9,7 @@ return function()
   ultest.setup(settings)
   vim.cmd [[
 " vim-test config
+let g:ultest_deprecation_notice = 0
 let test#custom_runners = {'typescript': ['jest']}
 let test#strategy = 'neovim'
 let test#go#runner = 'gotest'
