@@ -5,13 +5,14 @@ root-markers:
 tools:
   eslint-lint: &eslint-lint
     prefix: eslint_d
-    lint-debounce: 1s
-    lint-command: 'eslint_d -f unix --stdin --stdin-filename ${INPUT} --cache'
+    lint-debounce: 500ms
+    lint-command: 'NODE_OPTIONS="--max-old-space-size=1024" eslint_d -f visualstudio --stdin --stdin-filename ${INPUT} --cache'
     lint-ignore-exit-code: true
     lint-stdin: true
     lint-formats:
-      - '%f:%l:%c: %m'
-    format-command: 'eslint_d -f unix --fix-to-stdout --stdin --stdin-filename ${INPUT} --cache'
+      - "%f(%l,%c): %tarning %m"
+      - "%f(%l,%c): %rror %m"
+    format-command: 'NODE_OPTIONS="--max-old-space-size=1024" eslint_d --cache --fix-to-stdout --stdin --stdin-filename=${INPUT}'
     format-stdin: true
     require-marker: true
     root-markers:
