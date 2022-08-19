@@ -9,7 +9,7 @@ return {
       allowIncompleteCompletions = true,
       includeCompletionsForModuleExports = false
     },
-    maxTsServerMemory = 6144
+    maxTsServerMemory = 4096
   },
   flags = {
     debounce_text_changes = 500,
