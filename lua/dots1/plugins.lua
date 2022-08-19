@@ -59,7 +59,8 @@ return packer.startup(
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
       requires = {
-        {"nvim-treesitter/nvim-treesitter-textobjects"},
+        {"nvim-treesitter/nvim-treesitter-textobjects", commit = "b00b344c0f5a0a458d6e66eb570cfb347ebf4c38"},
+        --{"nvim-treesitter/nvim-treesitter-textobjects"},
         {"RRethy/nvim-treesitter-textsubjects"},
         {"nvim-treesitter/playground", opt = true},
         {"lewis6991/nvim-treesitter-context"},
