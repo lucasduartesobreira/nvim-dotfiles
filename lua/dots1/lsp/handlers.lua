@@ -3,11 +3,7 @@ if not is_format_ok then
   return
 end
 
-lsp_format.setup {
-  exclude = {
-    "tsserver"
-  }
-}
+lsp_format.setup {}
 
 local function mappings(bufnr)
   local opts = {noremap = true, silent = true, buffer = bufnr}
@@ -99,7 +95,6 @@ end
 local on_attach = function(client, bufnr)
   mappings(bufnr)
   highlight_document(client)
-  lsp_format.on_attach(client)
 end
 
 M.build_on_attach = function(...)
@@ -113,6 +108,9 @@ M.build_on_attach = function(...)
       if v ~= nil then
         v(client, bufnr)
       end
+    end
+    if client.resolved_capabilities.document_formatting then
+      lsp_format.on_attach(client)
     end
   end
   return base_on_attach
