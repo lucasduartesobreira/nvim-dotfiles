@@ -15,6 +15,7 @@ local options = {
   smartindent = true,
   timeoutlen = 1000,
   undofile = true,
+  hidden = true,
   updatetime = 300
 }
 

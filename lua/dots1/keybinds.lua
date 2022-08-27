@@ -58,9 +58,6 @@ if is_plenary_ok then
   )
 end
 
--- Lazygit
-keymap("n", "<leader>lg", "<cmd>LazyGit<CR>", opts)
-
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)

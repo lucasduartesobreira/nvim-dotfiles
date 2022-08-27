@@ -118,7 +118,6 @@ return packer.startup(
 
     -- Git shit
     use "lewis6991/gitsigns.nvim"
-    use "kdheepak/lazygit.nvim"
 
     -- DAP
     use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
@@ -128,6 +127,15 @@ return packer.startup(
 
     -- Ultest
     use {"rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins"}
+
+    -- Toggleterm
+    use {
+      "akinsho/toggleterm.nvim",
+      tag = "v2.*",
+      config = function()
+        require("toggleterm").setup()
+      end
+    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
