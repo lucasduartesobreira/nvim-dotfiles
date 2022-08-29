@@ -114,7 +114,13 @@ return packer.startup(
       "nvim-lualine/lualine.nvim",
       requires = {"kyazdani42/nvim-web-devicons"}
     }
-    use {"akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons"}
+
+    use(
+      {
+        "noib3/nvim-cokeline",
+        requires = "kyazdani42/nvim-web-devicons" -- If you want devicons
+      }
+    )
 
     -- Git shit
     use "lewis6991/gitsigns.nvim"
