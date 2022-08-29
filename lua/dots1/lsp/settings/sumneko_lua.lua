@@ -28,6 +28,8 @@ return {
         library = {
           [vim.fn.expand("$VIMRUNTIME/lua")] = true,
           [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+          [vim.fn.stdpath("data") .. "/site/pack/packer/start"] = true,
+          [vim.fn.stdpath("data") .. "/site/pack/packer/opt"] = true,
           [vim.fn.stdpath("config") .. "/lua"] = true
         }
       }
