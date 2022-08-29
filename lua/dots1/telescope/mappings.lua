@@ -6,6 +6,7 @@ keymap("n", "<leader>fgf", "<cmd>lua require('telescope.builtin').git_files()<cr
 keymap("n", "<leader>fw", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap("n", "<leader>bfw", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", opts)
 keymap("n", "<leader>*", "<cmd>lua require('telescope.builtin').grep_string()<cr>", opts)
+keymap("n", "<leader>**", "<cmd>lua require('telescope.builtin').grep_string({ grep_open_files = true })<cr>", opts)
 keymap("n", "<leader>lb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 keymap("n", "<leader>lj", "<cmd>lua require('telescope.builtin').jumplist()<cr>", opts)
 keymap("n", "<leader>lpb", "<cmd>lua require('telescope.builtin').builtin()<cr>", opts)
