@@ -16,8 +16,15 @@ local options = {
   timeoutlen = 1000,
   undofile = true,
   hidden = true,
-  updatetime = 300
+  updatetime = 300,
+  foldlevel = 20,
+  foldmethod = "expr",
+  foldexpr = "nvim_treesitter#foldexpr()"
 }
+
+local autocmd = vim.api.nvim_create_autocmd
+
+autocmd({"BufWinEnter"}, {command = "normal zx"})
 
 for key, value in pairs(options) do
   vim.opt[key] = value
