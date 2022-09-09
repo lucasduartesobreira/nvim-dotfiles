@@ -89,7 +89,8 @@ return packer.startup(
         {"hrsh7th/cmp-path"},
         {"f3fora/cmp-spell"},
         {"hrsh7th/cmp-nvim-lsp-signature-help"},
-        {"tzachar/cmp-tabnine", run = "./install.sh"}
+        {"tzachar/cmp-tabnine", run = "./install.sh"},
+        {"rcarriga/cmp-dap"}
       }
     }
     -- Theme
@@ -127,13 +128,29 @@ return packer.startup(
     use "lewis6991/gitsigns.nvim"
 
     -- DAP
+    use {"mfussenegger/nvim-dap"}
     use {"rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"}}
+    use {"mxsdev/nvim-dap-vscode-js", requires = {"mfussenegger/nvim-dap"}}
+    use {
+      "microsoft/vscode-js-debug",
+      opt = true,
+      run = "npm install --legacy-peer-deps && npm run compile"
+    }
 
     -- Wakatime
     use "wakatime/vim-wakatime"
 
-    -- Ultest
-    use {"rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins"}
+    -- Neotest
+    use {
+      "nvim-neotest/neotest",
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter",
+        "antoinemadec/FixCursorHold.nvim",
+        "haydenmeade/neotest-jest",
+        "rouge8/neotest-rust"
+      }
+    }
 
     -- Toggleterm
     use {

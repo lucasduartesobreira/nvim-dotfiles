@@ -13,6 +13,22 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
+local status_tabnine_ok, tabnine = pcall(require, "cmp_tabnine.config")
+if not status_tabnine_ok then
+  return
+end
+
+tabnine.setup(
+  {
+    max_lines = 750,
+    max_num_results = 10,
+    sort = true,
+    run_on_every_keystroke = true,
+    ignored_file_types = {},
+    show_prediction_strength = false
+  }
+)
+
 cmp.setup(
   {
     snippet = {
@@ -59,6 +75,9 @@ cmp.setup(
         )
       }
     ),
+    enabled = function()
+      return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
+    end,
     sources = cmp.config.sources(
       {
         {name = "nvim_lsp"},
@@ -67,6 +86,7 @@ cmp.setup(
         {name = "nvim_lsp_signature_help"}
       },
       {
+        {name = "dap"},
         {name = "buffer", max_item_count = 2},
         {name = "path", max_item_count = 4},
         {name = "spell", max_item_count = 2}

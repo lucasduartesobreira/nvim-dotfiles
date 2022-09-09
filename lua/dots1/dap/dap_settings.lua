@@ -1,17 +1,13 @@
 local adapters = {
   codelldb = require("dots1.dap.rust_utils").adapter,
-  node2 = {
-    type = "executable",
-    command = "node",
-    args = { os.getenv("HOME") .. "/projects/microsoft/vscode-node-debug2/out/src/nodeDebug.js" }
-  },
   go = function(callback, _)
     local handle
     local port = 38697
-    handle, _ = vim.loop.spawn(
+    handle, _ =
+      vim.loop.spawn(
       "dlv",
       {
-        args = { "dap", "-l", "127.0.0.1:" .. port },
+        args = {"dap", "-l", "127.0.0.1:" .. port},
         detached = true
       },
       function(code)
@@ -23,7 +19,7 @@ local adapters = {
     vim.defer_fn(
       function()
         --dap.repl.open()
-        callback({ type = "server", host = "127.0.0.1", port = port })
+        callback({type = "server", host = "127.0.0.1", port = port})
       end,
       100
     )
@@ -35,43 +31,66 @@ local adapters = {
 local configs = {
   typescript = {
     {
-      name = "Launch",
-      type = "node2",
+      type = "pwa-node",
       request = "launch",
-      --program = "${file}",
-      cwd = vim.fn.getcwd(),
-      sourceMaps = true,
-      protocol = "inspector",
-      console = "integratedTerminal",
-      runtimeArgs = { "--nolazy", "-r", "ts-node/register" },
-      args = { "${file}", "--transpile-only" },
-      skipFiles = { "<node_internals>/**", "node_modules/**" }
+      name = "Launch file",
+      program = "${file}",
+      cwd = "${workspaceFolder}"
     },
     {
-      -- For this to work you need to make sure the node process is started with the `--inspect` flag.
-      name = "Attach to process",
-      type = "node2",
+      type = "pwa-node",
       request = "attach",
-      processId = require "dap.utils".pick_process
+      name = "Attach",
+      processId = require "dap.utils".pick_process,
+      cwd = "${workspaceFolder}"
+    },
+    {
+      type = "pwa-node",
+      request = "launch",
+      name = "Debug Jest Tests",
+      -- trace = true, -- include debugger info
+      runtimeExecutable = "node",
+      runtimeArgs = {
+        "--inspect-brk",
+        "./node_modules/jest/bin/jest.js",
+        "--runInBand",
+        "${file}"
+      },
+      rootPath = "${workspaceFolder}",
+      cwd = "${workspaceFolder}",
+      console = "integratedTerminal",
+      internalConsoleOptions = "neverOpen"
     }
   },
   javascript = {
     {
-      name = "Launch",
-      type = "node2",
+      type = "pwa-node",
       request = "launch",
+      name = "Launch file",
       program = "${file}",
-      cwd = vim.fn.getcwd(),
-      sourceMaps = true,
-      protocol = "inspector",
-      console = "integratedTerminal"
+      cwd = "${workspaceFolder}"
     },
     {
-      -- For this to work you need to make sure the node process is started with the `--inspect` flag.
-      name = "Attach to process",
-      type = "node2",
+      type = "pwa-node",
       request = "attach",
-      processId = require "dap.utils".pick_process
+      name = "Attach",
+      processId = require "dap.utils".pick_process,
+      cwd = "${workspaceFolder}"
+    },
+    {
+      type = "pwa-node",
+      request = "launch",
+      name = "Debug Jest Tests",
+      -- trace = true, -- include debugger info
+      runtimeExecutable = "node",
+      runtimeArgs = {
+        "./node_modules/jest/bin/jest.js",
+        "--runInBand"
+      },
+      rootPath = "${workspaceFolder}",
+      cwd = "${workspaceFolder}",
+      console = "integratedTerminal",
+      internalConsoleOptions = "neverOpen"
     }
   },
   rust = {
@@ -80,7 +99,7 @@ local configs = {
       type = "codelldb",
       request = "launch",
       cargo = {
-        args = { "build" }
+        args = {"build"}
       },
       cwd = "${workspaceFolder}",
       stopOnEntry = true
