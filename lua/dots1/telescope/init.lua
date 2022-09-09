@@ -62,7 +62,7 @@ telescope.setup {
         ["<C-\\>"] = actions.which_key,
         ["<C-n>"] = actions.move_selection_previous,
         ["<C-p>"] = actions.move_selection_next,
-        ["<CR>"] = telescope_custom_actions.multi_selection_open,
+        ["<C-CR>"] = telescope_custom_actions.multi_selection_open,
         ["<C-V>"] = telescope_custom_actions.multi_selection_open_vsplit,
         ["<C-S>"] = telescope_custom_actions.multi_selection_open_split,
         ["<C-T>"] = telescope_custom_actions.multi_selection_open_tab
@@ -82,5 +82,6 @@ telescope.setup {
 telescope.load_extension("ui-select")
 telescope.load_extension("fzf")
 telescope.load_extension("file_browser")
+telescope.load_extension("dap")
 
 require("dots1.telescope.mappings")
