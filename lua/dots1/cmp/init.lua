@@ -18,7 +18,7 @@ if not status_tabnine_ok then
   return
 end
 
-tabnine.setup(
+tabnine:setup(
   {
     max_lines = 750,
     max_num_results = 10,
