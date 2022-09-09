@@ -51,7 +51,7 @@ cmp.setup(
           function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
-            elseif luasnip.expand_or_locally_jumpable() then
+            elseif luasnip.expand_or_jumpable() then
               luasnip.expand_or_jump()
             elseif has_words_before() then
               cmp.complete()
@@ -81,7 +81,7 @@ cmp.setup(
     sources = cmp.config.sources(
       {
         {name = "nvim_lsp"},
-        {name = "luasnip", max_item_count = 3},
+        {name = "luasnip"},
         {name = "cmp_tabnine", max_item_count = 3},
         {name = "nvim_lsp_signature_help"}
       },
