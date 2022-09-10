@@ -76,8 +76,15 @@ ls.add_snippets(
         )
       }
     )
-  }
+  },
+  {key = "lua"}
 )
+
+local typescript = require("dots1.luasnip.snippets.typescript")
+
+for key_name, value in pairs(typescript) do
+  ls.add_snippets("typescript", value, {key = key_name})
+end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 vim.api.nvim_set_keymap("i", "<A-l>", "<Plug>luasnip-next-choice", {})
