@@ -1,4 +1,9 @@
-require "lualine".setup {
+local is_lualine_ok, lualine = pcall(require, "lualine")
+if not is_lualine_ok then
+  return
+end
+
+lualine.setup {
   options = {
     icons_enabled = true,
     theme = "nightfox",
