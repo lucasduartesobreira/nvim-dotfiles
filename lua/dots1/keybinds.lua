@@ -1,11 +1,13 @@
 local opts = {noremap = true, silent = true}
 
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 -- Map leader
 keymap("n", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+
+keymap({"n", "v"}, "<leader>p", '"_dP')
 
 -- move through windows
 keymap("n", "<C-h>", "<C-w>h", opts)
