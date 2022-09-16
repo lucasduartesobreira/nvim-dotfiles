@@ -130,5 +130,6 @@ cokeline.setup(
 
 local keymap = vim.keymap.set
 keymap("n", "<leader>bd", ":bdelete<CR>", {silent = true})
+keymap("n", "<leader>bda", ":%bdelete<CR>", {silent = true})
 keymap("n", "gb", "<Plug>(cokeline-pick-focus)", {silent = true})
 keymap("n", "<leader>bc", "<Plug>(cokeline-pick-close)", {silent = true})
