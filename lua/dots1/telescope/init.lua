@@ -10,14 +10,28 @@ local telescope_custom_actions = {}
 
 function telescope_custom_actions._multiopen(prompt_bufnr, open_cmd)
   local picker = action_state.get_current_picker(prompt_bufnr)
-  local selected_entry = action_state.get_selected_entry()
   local num_selections = #picker:get_multi_selection()
   if not num_selections or num_selections <= 1 then
     actions.add_selection(prompt_bufnr)
   end
   actions.send_selected_to_qflist(prompt_bufnr)
-  vim.cmd("cfdo " .. open_cmd)
+
+  local results = vim.fn.getqflist()
+
+  for _, result in ipairs(results) do
+    local current_file = vim.fn.bufname()
+    local next_file = vim.fn.bufname(result.bufnr)
+
+    if current_file == "" then
+      vim.api.nvim_command("edit" .. " " .. next_file)
+    else
+      vim.api.nvim_command(open_cmd .. " " .. next_file)
+    end
+  end
+
+  vim.api.nvim_command("cd .")
 end
+
 function telescope_custom_actions.multi_selection_open_vsplit(prompt_bufnr)
   telescope_custom_actions._multiopen(prompt_bufnr, "vsplit")
 end
@@ -59,7 +73,7 @@ telescope.setup {
     grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
     mappings = {
       i = {
-        ["<C-\\>"] = actions.which_key,
+        ["<C-?>"] = actions.which_key,
         ["<C-n>"] = actions.move_selection_previous,
         ["<C-p>"] = actions.move_selection_next,
         ["<C-CR>"] = telescope_custom_actions.multi_selection_open,
