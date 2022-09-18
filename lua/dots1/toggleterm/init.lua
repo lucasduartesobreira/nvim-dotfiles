@@ -45,7 +45,7 @@ vim.keymap.set("n", "<leader>tw", _TASKWARRIOR_TOGGLE, {silent = true})
 
 function _G.set_terminal_keymaps()
   local opts = {buffer = 0}
-  vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], opts)
+  vim.keymap.set("t", "<C-esc>", [[<C-\><C-n>]], opts)
 end
 
 vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
