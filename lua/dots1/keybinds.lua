@@ -15,6 +15,14 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- terminal binds for command mode
+keymap("c", "<C-a>", "<Home>", {})
+keymap("c", "<C-e>", "<End>", {})
+keymap("c", "<C-f>", "<Right>", {})
+keymap("c", "<C-b>", "<Left>", {})
+keymap("c", "<A-f>", "<S-Right>", {})
+keymap("c", "<A-b>", "<S-Left>", {})
+
 -- resize windows
 keymap("n", "<A-k>", "<C-w>-", opts)
 keymap("n", "<A-j>", "<C-w>+", opts)
@@ -26,12 +34,6 @@ keymap("i", "<C-h>", "<Left>", opts)
 keymap("i", "<C-j>", "<Down>", opts)
 keymap("i", "<C-k>", "<Up>", opts)
 keymap("i", "<C-l>", "<Right>", opts)
-
--- move with hjkl in command mode
-keymap("c", "<C-h>", "<Left>", opts)
-keymap("c", "<C-j>", "<Down>", opts)
-keymap("c", "<C-k>", "<Up>", opts)
-keymap("c", "<C-l>", "<Right>", opts)
 
 -- rebind split vertical, horizontal and close a split
 keymap("n", "<A-x>", ":split<CR><C-w>j", opts)
