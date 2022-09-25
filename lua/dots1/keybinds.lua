@@ -23,6 +23,18 @@ keymap("c", "<C-b>", "<Left>", {})
 keymap("c", "<A-f>", "<S-Right>", {})
 keymap("c", "<A-b>", "<S-Left>", {})
 
+-- terminal binds for insert mode
+keymap("i", "<C-a>", "<Home>", {})
+keymap("i", "<C-e>", "<End>", {})
+keymap("i", "<C-f>", "<Right>", {})
+keymap("i", "<C-b>", "<Left>", {})
+keymap("i", "<A-f>", "<S-Right>", {})
+keymap("i", "<A-b>", "<S-Left>", {})
+keymap("i", "<A-w>", "<Esc>lciw", {})
+keymap("i", "<A-d>", "<Esc>lcw", {})
+keymap("i", "<C-u>", "<Esc>cc", {})
+keymap("i", "<A-u>", "<Esc>lvwgU", {})
+
 -- resize windows
 keymap("n", "<A-k>", "<C-w>-", opts)
 keymap("n", "<A-j>", "<C-w>+", opts)
@@ -30,10 +42,8 @@ keymap("n", "<A-h>", "<C-w><", opts)
 keymap("n", "<A-l>", "<C-w>>", opts)
 
 -- move with hjkl in insert mode
-keymap("i", "<C-h>", "<Left>", opts)
 keymap("i", "<C-j>", "<Down>", opts)
 keymap("i", "<C-k>", "<Up>", opts)
-keymap("i", "<C-l>", "<Right>", opts)
 
 -- rebind split vertical, horizontal and close a split
 keymap("n", "<A-x>", ":split<CR><C-w>j", opts)
@@ -45,6 +55,7 @@ keymap("n", "gN", "O<esc>", opts)
 
 -- save with control+s
 keymap("n", "<C-s>", "<cmd>w<CR>", opts)
+keymap("i", "<C-s>", "<cmd>w<CR>", opts)
 
 -- sugar bind to ` (goto mark)
 keymap("n", "gm", "`", opts)
