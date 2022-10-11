@@ -25,7 +25,7 @@ end
 
 local function highlight_document(client)
   -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_exec(
       [[
       augroup lsp_document_highlight
@@ -109,7 +109,7 @@ M.build_on_attach = function(...)
         v(client, bufnr)
       end
     end
-    if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.documentFormattingProvider then
       lsp_format.on_attach(client)
     end
   end

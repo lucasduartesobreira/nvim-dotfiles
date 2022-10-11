@@ -20,5 +20,6 @@ return {
   end,
   filetypes = {"javascript", "typescript", "go", "lua"},
   cmd = {"efm-langserver", "-c", efm_config_path},
-  init_options = {documentFormatting = true, publishDiagnostics = true}
+  init_options = {documentFormatting = true, publishDiagnostics = true},
+  single_file_support = false
 }

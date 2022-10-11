@@ -1,16 +1,8 @@
-USER = vim.fn.expand("$USER")
-
-local sumneko_root_path = ""
-local sumneko_binary = ""
-
-sumneko_root_path = "/home/" .. USER .. "/lua-language-server"
-sumneko_binary = "/home/" .. USER .. "/lua-language-server/bin/lua-language-server"
-
 return {
   on_attach = function(client)
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.documentFormattingProvider = false
   end,
-  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+  cmd = {"lua-language-server"},
   settings = {
     Lua = {
       runtime = {
