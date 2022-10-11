@@ -4,10 +4,10 @@ return {
   end,
   init_options = {
     hostInfo = "neovim",
-    disableAutomaticTypingAcquisition = false,
+    disableAutomaticTypingAcquisition = true,
     preferences = {
       allowIncompleteCompletions = true,
-      includeCompletionsForModuleExports = false
+      includeCompletionsForModuleExports = true
     },
     maxTsServerMemory = 4096
   },
