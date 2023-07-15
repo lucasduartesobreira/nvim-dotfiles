@@ -8,7 +8,7 @@ local builtins = null_ls.builtins
 null_ls.setup(
   {
     sources = {
-      builtins.code_actions.eslint_d,
+      builtins.code_actions.eslint_d
       --builtins.diagnostics.eslint_d,
       --builtins.diagnostics.golangci_lint,
       --builtins.diagnostics.standardjs,

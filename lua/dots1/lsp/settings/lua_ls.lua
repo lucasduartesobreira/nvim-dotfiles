@@ -7,9 +7,7 @@ return {
     Lua = {
       runtime = {
         -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = "LuaJIT",
-        -- Setup your lua path
-        path = vim.split(package.path, ";")
+        version = "LuaJIT"
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
@@ -22,10 +20,11 @@ return {
           [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
           [vim.fn.stdpath("data") .. "/site/pack/packer/start"] = true,
           [vim.fn.stdpath("data") .. "/site/pack/packer/opt"] = true,
-          [vim.fn.stdpath("config") .. "/lua"] = true
+          [vim.fn.stdpath("config") .. "/lua"] = true,
+          ["${3rd}/luassert/library"] = true,
+          ["${3rd}/luv/library"] = true
         }
       }
     }
-  },
-  root_dir = require("lspconfig.util").root_pattern(".git")
+  }
 }

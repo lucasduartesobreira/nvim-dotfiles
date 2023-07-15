@@ -6,9 +6,9 @@ local is_go_ok, gopls = pcall(require, "dots1.lsp.settings.gopls")
 if not is_go_ok then
   gopls = false
 end
-local is_lua_ok, sumneko_lua = pcall(require, "dots1.lsp.settings.sumneko_lua")
+local is_lua_ok, lua_ls = pcall(require, "dots1.lsp.settings.lua_ls")
 if not is_lua_ok then
-  sumneko_lua = false
+  lua_ls = false
 end
 local is_ts_ok, tsserver = pcall(require, "dots1.lsp.settings.tsserver")
 if not is_ts_ok then
@@ -18,11 +18,16 @@ local is_efm_ok, efm = pcall(require, "dots1.lsp.settings.efm")
 if not is_efm_ok then
   efm = false
 end
+local is_pyright_ok, pyright = pcall(require, "dots1.lsp.settings.pyright")
+if not is_pyright_ok then
+  return
+end
 
 return {
   rust_analyzer = rust_analyzer,
   gopls = gopls,
-  sumneko_lua = sumneko_lua,
+  lua_ls = lua_ls,
   tsserver = tsserver,
-  efm = efm
+  efm = efm,
+  pyright = pyright
 }

@@ -10,8 +10,17 @@ tools:
     lint-ignore-exit-code: true
     lint-stdin: true
     lint-formats:
-      - "%f(%l,%c): %tarn %m"
+      - "%f(%l,%c): %tarning %m"
       - "%f(%l,%c): %trror %m"
+    format-command: 'eslint_d --cache --fix-to-stdout --stdin --stdin-filename=${INPUT}'
+    format-stdin: true
+    require-marker: true
+    root-markers:
+      - .eslintrc.js
+      - .eslintrc.yaml
+      - .eslintrc.yml
+      - .eslintrc.json
+  eslint-format: &eslint-format
     format-command: 'eslint_d --cache --fix-to-stdout --stdin --stdin-filename=${INPUT}'
     format-stdin: true
     require-marker: true
@@ -28,7 +37,7 @@ tools:
     root-markers:
       - go.mod
   prettier: &prettier
-    format-command: 'prettier --stdin --stdin-filepath ${INPUT}'
+    format-command: './node_modules/.bin/prettier --stdin --stdin-filepath ${INPUT}'
     format-stdin: true
     root-markers:
       - .prettierrc
@@ -71,11 +80,15 @@ tools:
       - go.mod
 languages:
   javascript:
-    - <<: *standard
     - <<: *eslint-lint
     - <<: *prettier
   typescript:
     - <<: *eslint-lint
+    - <<: *eslint-format
+    - <<: *prettier
+  typescriptreact:
+    - <<: *eslint-lint
+    #- <<: *eslint-format
     - <<: *prettier
   go:
     - <<: *golangci-lint

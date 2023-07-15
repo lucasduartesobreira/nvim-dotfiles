@@ -11,7 +11,11 @@ local get_cargo_args = function(args)
 
   assert(args.args, vim.inspect(args))
   for idx, a in ipairs(args.args) do
-    table.insert(result, a)
+    if type(a) == "function" then
+      table.insert(result, a())
+    else
+      table.insert(result, a)
+    end
     if idx == 1 and a == "test" then
       -- Don't run tests, just build
       table.insert(result, "--no-run")
@@ -23,8 +27,8 @@ local get_cargo_args = function(args)
   return result
 end
 
+local utils = require("dots1.utils")
 local executeCargoCommand = function(config)
-  local utils = require("dots.utils")
   local cargoArgs = get_cargo_args(config.cargo)
   local command = vim.deepcopy(cargoArgs)
   table.insert(command, 1, "cargo")
@@ -100,7 +104,11 @@ local createFinalConfigWithCargo = function(config)
         type = config.type,
         request = "launch",
         program = jsonCargoResponse.executable,
-        args = config.cargo.executableArgs or {},
+        args = --[[
+   [          type(config.cargo.executableArgs) == "function" and {config.cargo.executableArgs()} or
+   [
+   ]]
+        {config.cargo.executableArgs} or {},
         cwd = config.cwd,
         stopOnEntry = config.stopOnEntry or true,
         runInTerminal = config.runInTerminal or false
@@ -118,7 +126,7 @@ local createFinalConfigWithCargo = function(config)
   return {}
 end
 
-local enrich_function = function(config, on_config)
+function enrich_function(config, on_config)
   local final_config
   if notNil(config.cargo) then
     final_config = createFinalConfigWithCargo(config)
@@ -128,81 +136,31 @@ local enrich_function = function(config, on_config)
     final_config = vim.deepcopy(config)
   end
 
+  print(vim.inspect(final_config))
   on_config(final_config)
 end
 
 M.adapter = function(callback)
-  local stdout = vim.loop.new_pipe(false)
-  local stderr = vim.loop.new_pipe(false)
-
-  -- CHANGE THIS!
-  local cmd = "/home/dots/projects/debuggers/codelldb/extension/adapter/codelldb"
-  local liblldb = "/home/dots/projects/debuggers/codelldb/extension/lldb/lib/liblldb.so"
-
-  local handle, pid_or_err
-  local opts = {
-    stdio = {nil, stdout, stderr},
-    args = {
-      "--liblldb",
-      liblldb,
-      "--params",
-      '{"showDisassembly" : "never"}'
-    },
-    detached = true
-  }
-  handle, pid_or_err =
-    vim.loop.spawn(
-    cmd,
-    opts,
-    function(code)
-      stdout:close()
-      stderr:close()
-      handle:close()
-      if code ~= 0 then
-        print("codelldb exited with code", code)
-      end
-    end
-  )
-  assert(handle, "Error running codelldb: " .. tostring(pid_or_err))
-  stdout:read_start(
-    function(err, chunk)
-      assert(not err, err)
-      if chunk then
-        local port = chunk:match("Listening on port (%d+)")
-        if port then
-          vim.schedule(
-            function()
-              callback(
-                {
-                  type = "server",
-                  host = "127.0.0.1",
-                  port = port,
-                  enrich_config = enrich_function
-                }
-              )
-            end
-          )
-        else
-          vim.schedule(
-            function()
-              require("dap.repl").append(chunk)
-            end
-          )
-        end
-      end
-    end
-  )
-  stderr:read_start(
-    function(err, chunk)
-      assert(not err, err)
-      if chunk then
-        vim.schedule(
-          function()
-            require("dap.repl").append(chunk)
-          end
-        )
-      end
-    end
+  local cmd = "/home/lucas/projects/debuggers/codelldb/extension/adapter/codelldb"
+  local liblldb = "/home/lucas/projects/debuggers/codelldb/extension/lldb/lib/liblldb.so"
+  callback(
+    {
+      type = "server",
+      host = "127.0.0.1",
+      port = "${port}",
+      executable = {
+        command = cmd,
+        args = {
+          "--liblldb",
+          liblldb,
+          "--port",
+          "${port}",
+          "--settings",
+          '{"showDisassembly" : "never"}'
+        }
+      },
+      enrich_config = enrich_function
+    }
   )
 end
 

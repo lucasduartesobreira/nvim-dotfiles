@@ -105,6 +105,21 @@ local configs = {
       stopOnEntry = true
     },
     {
+      name = "Launch test",
+      type = "codelldb",
+      request = "launch",
+      cargo = {
+        args = {
+          "test"
+        },
+        executableArgs = function()
+          return vim.fn.input("Test regex: ")
+        end
+      },
+      cwd = "${workspaceFolder}",
+      stopOnEntry = true
+    },
+    {
       name = "Launch file",
       type = "codelldb",
       request = "launch",

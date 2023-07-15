@@ -158,13 +158,14 @@ interface I{} {{
 
 const {}Schema = new Schema({{ }}, {{ timestamps: true}})
 
-const {}: Model<I{}> = models[] ?? model({}, {}Schema, {})
+const {}: Model<I{}> = models[{}] ?? model({}, {}Schema, {})
   ]],
       {
         i(1),
         rep(1),
         rep(1),
         rep(1),
+        rep(2),
         i(2),
         rep(1),
         rep(2)

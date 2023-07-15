@@ -15,6 +15,8 @@ local palette = require("nightfox.palette").load("nightfox")
 local red = vim.g.terminal_color_1
 local yellow = vim.g.terminal_color_3
 
+vim.api.nvim_set_hl(0, "TabLine", {bg = palette.bg0, fg = palette.fg2})
+
 cokeline.setup(
   {
     default_hl = {
@@ -26,12 +28,12 @@ cokeline.setup(
     components = {
       {
         text = " ",
-        bg = palette.bg0
+        bg = get_hex("TabLine", "bg")
       },
       {
         text = "",
         fg = get_hex("ColorColumn", "bg"),
-        bg = palette.bg0
+        bg = get_hex("TabLine", "bg")
       },
       {
         text = function(buffer)
@@ -111,7 +113,7 @@ cokeline.setup(
             buffer.diagnostics.hints ~= 0
 
           local space_before_sign = has_diagnostics and " " or ""
-          return space_before_sign .. (buffer.is_modified and "●" or "")
+          return space_before_sign .. (buffer.is_modified and "●" or "x")
         end,
         fg = function(buffer)
           return buffer.is_modified and green or nil
@@ -122,7 +124,7 @@ cokeline.setup(
       {
         text = "",
         fg = get_hex("ColorColumn", "bg"),
-        bg = palette.bg0
+        bg = get_hex("TabLine", "bg")
       }
     }
   }

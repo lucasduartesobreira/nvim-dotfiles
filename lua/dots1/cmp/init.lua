@@ -46,13 +46,12 @@ cmp.setup(
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
         ["<C-y>"] = cmp.mapping.close(),
+        ["jk"] = cmp.mapping.abort(),
         ["<CR>"] = cmp.mapping.confirm({select = true}), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         ["<Tab>"] = cmp.mapping(
           function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-              luasnip.expand_or_jump()
             elseif has_words_before() then
               cmp.complete()
             else
@@ -65,8 +64,6 @@ cmp.setup(
           function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-              luasnip.jump(-1)
             else
               fallback()
             end
@@ -132,13 +129,30 @@ cmp.setup.cmdline(
 cmp.setup.cmdline(
   ":",
   {
-    mapping = cmp.mapping.preset.cmdline(),
+    mapping = cmp.mapping.preset.cmdline(
+      {
+        ["<Tab>"] = {
+          c = function(_)
+            if cmp.visible() then
+              cmp.select_next_item()
+            else
+              vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<C-z>", true, true, true), "ni", true)
+            end
+          end
+        }
+      }
+    ),
     sources = cmp.config.sources(
       {
         {name = "path"}
       },
       {
-        {name = "cmdline"}
+        {
+          name = "cmdline",
+          option = {
+            ignore_cmds = {"!", "Man"}
+          }
+        }
       }
     )
   }

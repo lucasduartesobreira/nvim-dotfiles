@@ -7,7 +7,15 @@ return {
     disableAutomaticTypingAcquisition = true,
     preferences = {
       allowIncompleteCompletions = true,
-      includeCompletionsForModuleExports = true
+      includeCompletionsForModuleExports = true,
+      includeInlayParameterNameHints = "all",
+      includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+      includeInlayFunctionParameterTypeHints = true,
+      includeInlayVariableTypeHints = true,
+      includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+      includeInlayPropertyDeclarationTypeHints = true,
+      includeInlayFunctionLikeReturnTypeHints = true,
+      includeInlayEnumMemberValueHints = true
     },
     maxTsServerMemory = 4096
   },

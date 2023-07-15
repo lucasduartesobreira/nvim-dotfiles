@@ -11,15 +11,15 @@ return {
       {"VimLeavePre"},
       {
         group = group,
-        pattern = {"*.ts"},
+        pattern = {"*.ts", "*.tsx", "*.js", "*.jsx"},
         callback = function()
           os.execute("eslint_d stop")
         end
       }
     )
   end,
-  filetypes = {"javascript", "typescript", "go", "lua"},
+  filetypes = {"javascript", "typescript", "typescriptreact", "javascriptreact", "go", "lua"},
   cmd = {"efm-langserver", "-c", efm_config_path},
   init_options = {documentFormatting = true, publishDiagnostics = true},
-  single_file_support = false
+  single_file_support = true
 }

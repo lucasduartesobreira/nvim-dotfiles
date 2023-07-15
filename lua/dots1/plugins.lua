@@ -59,11 +59,11 @@ return packer.startup(
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
       requires = {
-        {"nvim-treesitter/nvim-treesitter-textobjects", commit = "b00b344c0f5a0a458d6e66eb570cfb347ebf4c38"},
-        --{"nvim-treesitter/nvim-treesitter-textobjects"},
+        --{"nvim-treesitter/nvim-treesitter-textobjects", commit = "b00b344c0f5a0a458d6e66eb570cfb347ebf4c38"},
+        {"nvim-treesitter/nvim-treesitter-textobjects"},
         {"RRethy/nvim-treesitter-textsubjects"},
         {"nvim-treesitter/playground", opt = true},
-        {"lewis6991/nvim-treesitter-context"},
+        {"nvim-treesitter/nvim-treesitter-context"},
         {"p00f/nvim-ts-rainbow"}
       }
     }
@@ -90,7 +90,8 @@ return packer.startup(
         {"f3fora/cmp-spell"},
         {"hrsh7th/cmp-nvim-lsp-signature-help"},
         {"tzachar/cmp-tabnine", run = "./install.sh"},
-        {"rcarriga/cmp-dap"}
+        {"rcarriga/cmp-dap"},
+        {"hrsh7th/cmp-cmdline"}
       }
     }
     -- Theme
@@ -159,6 +160,22 @@ return packer.startup(
       config = function()
         require("toggleterm").setup()
       end
+    }
+
+    use(
+      {
+        "iamcco/markdown-preview.nvim",
+        opt = true,
+        run = "cd app && npm install",
+        setup = function()
+          vim.g.mkdp_filetypes = {"markdown"}
+        end,
+        ft = {"markdown"}
+      }
+    )
+
+    use {
+      "lvimuser/lsp-inlayhints.nvim"
     }
 
     -- Automatically set up your configuration after cloning packer.nvim
