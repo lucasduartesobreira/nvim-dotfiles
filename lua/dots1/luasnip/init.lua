@@ -86,6 +86,12 @@ for key_name, value in pairs(typescript) do
   ls.add_snippets("typescript", value, {key = key_name})
 end
 
+local rust = require("dots1.luasnip.snippets.rust")
+
+for key_name, value in pairs(rust) do
+  ls.add_snippets("rust", value, {key = key_name})
+end
+
 require("luasnip/loaders/from_vscode").lazy_load()
 
 vim.keymap.set(
@@ -119,4 +125,3 @@ vim.keymap.set(
   end,
   {silent = true}
 )
-
