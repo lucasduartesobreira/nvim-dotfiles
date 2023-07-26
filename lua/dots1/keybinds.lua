@@ -111,3 +111,17 @@ aucmd(
   {"BufWinEnter", "WinEnter"},
   {group = terminal_id, pattern = "*", command = "nnoremap'<buffer> <leader>nt :botright new <bar> :terminal <CR>"}
 )
+
+keymap("n", "]q", ":cnext<CR>", opts)
+keymap("n", "[q", ":cprev<CR>", opts)
+local is_open = false
+local function toggle_quickfix()
+  if is_open then
+    vim.cmd ":cclose"
+    is_open = false
+  else
+    vim.cmd ":copen"
+    is_open = true
+  end
+end
+keymap("n", "<leader>qt", toggle_quickfix, opts)
