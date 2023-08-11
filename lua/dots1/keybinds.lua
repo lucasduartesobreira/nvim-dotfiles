@@ -114,14 +114,30 @@ aucmd(
 
 keymap("n", "]q", ":cnext<CR>", opts)
 keymap("n", "[q", ":cprev<CR>", opts)
-local is_open = false
+keymap("n", "]l", ":lnext<CR>", opts)
+keymap("n", "[l", ":lprev<CR>", opts)
+
+local is_ql_open = false
 local function toggle_quickfix()
-  if is_open then
+  if is_ql_open then
     vim.cmd ":cclose"
-    is_open = false
+    is_ql_open = false
   else
     vim.cmd ":copen"
-    is_open = true
+    is_ql_open = true
   end
 end
-keymap("n", "<leader>qt", toggle_quickfix, opts)
+
+local is_ll_open = false
+local function toggle_loclist()
+  if is_ll_open then
+    vim.cmd ":lopen"
+    is_ll_open = false
+  else
+    vim.cmd ":lclose"
+    is_ll_open = true
+  end
+end
+
+keymap("n", "<leader>q", toggle_quickfix, opts)
+keymap("n", "<leader>ll", toggle_loclist, opts)

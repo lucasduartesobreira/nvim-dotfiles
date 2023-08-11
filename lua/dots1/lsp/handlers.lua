@@ -75,6 +75,18 @@ M.setup = function()
 
   vim.diagnostic.config(config)
 
+  vim.api.nvim_create_augroup("diagnostics", {clear = true})
+  vim.api.nvim_create_autocmd(
+    "DiagnosticChanged",
+    {
+      group = "diagnostics",
+      callback = function()
+        vim.diagnostic.setloclist({open = false})
+        vim.diagnostic.setqflist({open = false})
+      end
+    }
+  )
+
   vim.lsp.handlers["textDocument/hover"] =
     vim.lsp.with(
     vim.lsp.handlers.hover,
