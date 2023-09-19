@@ -20,7 +20,7 @@ if not is_efm_ok then
 end
 local is_pyright_ok, pyright = pcall(require, "dots1.lsp.settings.pyright")
 if not is_pyright_ok then
-  return
+  is_pyright_ok = false
 end
 
 return {
