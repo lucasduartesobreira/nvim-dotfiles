@@ -3,8 +3,8 @@ if not is_cokeline_ok then
   return
 end
 
-local is_picking_focus = require("cokeline/mappings").is_picking_focus
-local is_picking_close = require("cokeline/mappings").is_picking_close
+local is_picking_focus = require("cokeline.mappings").is_picking_focus
+local is_picking_close = require("cokeline.mappings").is_picking_close
 local get_hex = require("cokeline.hlgroups").get_hl_attr
 local errors_fg = get_hex("DiagnosticError", "fg")
 local warnings_fg = get_hex("DiagnosticWarn", "fg")
