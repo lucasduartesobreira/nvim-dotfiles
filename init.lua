@@ -15,3 +15,6 @@ require("dots1.dap")
 require("dots1.toggleterm")
 require("dots1.neotest")
 require("dots1.lsp-inlayhints")
+
+vim.cmd [[ :copen ]]
+vim.cmd [[ :cclose ]]
