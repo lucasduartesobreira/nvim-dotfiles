@@ -24,6 +24,9 @@ return {
           ["${3rd}/luassert/library"] = true,
           ["${3rd}/luv/library"] = true
         }
+      },
+      hint = {
+        enable = true
       }
     }
   }
