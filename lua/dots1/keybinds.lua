@@ -34,6 +34,8 @@ keymap("i", "<A-w>", "<Esc>lciw", {})
 keymap("i", "<A-d>", "<Esc>lcw", {})
 keymap("i", "<C-u>", "<Esc>cc", {})
 keymap("i", "<A-u>", "<Esc>lvwgU", {})
+keymap("i", "<A-j>", '"', {})
+keymap("i", "<A-k>", "'", {})
 
 -- resize windows
 keymap("n", "<A-k>", "<C-w>-", opts)
