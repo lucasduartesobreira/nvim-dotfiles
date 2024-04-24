@@ -34,8 +34,8 @@ keymap("i", "<A-w>", "<Esc>lciw", {})
 keymap("i", "<A-d>", "<Esc>lcw", {})
 keymap("i", "<C-u>", "<Esc>cc", {})
 keymap("i", "<A-u>", "<Esc>lvwgU", {})
-keymap("i", "<A-j>", '"', {})
-keymap("i", "<A-k>", "'", {})
+keymap("i", "<A-ç>", '""', {silent = true})
+keymap("i", "<A-m>", "''", {silent = true})
 
 -- resize windows
 keymap("n", "<A-k>", "<C-w>-", opts)
@@ -97,8 +97,6 @@ nnoremap <expr> k v:count ? (v:count > 5 ? "m'" . v:count : '') . 'k' : 'gk'
 -- Move text
 keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
 keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
-keymap("i", "<C-A-k>", "<esc>:m .-2<CR>==i", opts)
-keymap("i", "<C-A-j>", "<esc>:m .+1<CR>==i", opts)
 keymap("n", "<leader>k", "<esc>:m .-2<CR>==", opts)
 keymap("n", "<leader>j", "<esc>:m .+1<CR>==", opts)
 
