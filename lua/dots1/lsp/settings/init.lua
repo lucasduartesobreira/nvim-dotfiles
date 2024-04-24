@@ -22,6 +22,10 @@ local is_pyright_ok, pyright = pcall(require, "dots1.lsp.settings.pyright")
 if not is_pyright_ok then
   is_pyright_ok = false
 end
+local is_ocamllsp_ok, ocamllsp = pcall(require, "dots1.lsp.settings.ocamllsp")
+if not is_ocamllsp_ok then
+  is_ocamllsp_ok = false
+end
 
 return {
   rust_analyzer = rust_analyzer,
@@ -29,5 +33,6 @@ return {
   lua_ls = lua_ls,
   tsserver = tsserver,
   efm = efm,
-  pyright = pyright
+  pyright = pyright,
+  ocamllsp = ocamllsp
 }
