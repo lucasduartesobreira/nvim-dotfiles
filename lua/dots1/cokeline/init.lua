@@ -11,7 +11,8 @@ local warnings_fg = get_hex("DiagnosticWarn", "fg")
 local info_fg = get_hex("DiagnosticInfo", "fg")
 local hint_fg = get_hex("DiagnosticHint", "fg")
 local green = vim.g.terminal_color_2
-local palette = require("nightfox.palette").load("nightfox")
+local coloscheme_name = vim.g.colors_name
+local palette = require("nightfox.palette").load(coloscheme_name)
 local red = vim.g.terminal_color_1
 local yellow = vim.g.terminal_color_3
 
