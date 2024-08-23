@@ -3,10 +3,12 @@ if not is_lualine_ok then
   return
 end
 
+local colorscheme_name = vim.g.colors_name
+
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = "nightfox",
+    theme = colorscheme_name,
     disabled_filetypes = {},
     section_separators = "",
     component_separators = ""
