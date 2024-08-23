@@ -32,7 +32,7 @@ nightfox.setup(
   }
 )
 
-vim.cmd [[ colorscheme nightfox ]]
+vim.cmd [[ colorscheme carbonfox ]]
 
 -- Load the configuration set above and apply the colorscheme
 --nightfox.load()
