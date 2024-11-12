@@ -12,14 +12,18 @@ tools:
     lint-formats:
       - "%f(%l,%c): %tarning %m"
       - "%f(%l,%c): %trror %m"
-    format-command: 'eslint_d --cache --fix-to-stdout --stdin --stdin-filename=${INPUT}'
-    format-stdin: true
     require-marker: true
     root-markers:
       - .eslintrc.js
       - .eslintrc.yaml
       - .eslintrc.yml
       - .eslintrc.json
+      - eslint.config.js
+      - eslint.config.ts
+      - eslint.config.cjs
+      - eslint.config.mjs
+      - eslint.config.cts
+      - eslint.config.mts
   eslint-format: &eslint-format
     format-command: 'eslint_d --cache --fix-to-stdout --stdin --stdin-filename=${INPUT}'
     format-stdin: true
@@ -29,6 +33,12 @@ tools:
       - .eslintrc.yaml
       - .eslintrc.yml
       - .eslintrc.json
+      - eslint.config.js
+      - eslint.config.ts
+      - eslint.config.cjs
+      - eslint.config.mjs
+      - eslint.config.cts
+      - eslint.config.mts
   golangci-lint: &golangci-lint
     lint-command: 'golangci-lint run'
     lint-source: 'golangci-lint'
@@ -84,7 +94,7 @@ languages:
     - <<: *prettier
   typescript:
     - <<: *eslint-lint
-    - <<: *eslint-format
+    #- <<: *eslint-format
     - <<: *prettier
   typescriptreact:
     - <<: *eslint-lint
