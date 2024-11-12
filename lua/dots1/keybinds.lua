@@ -139,5 +139,5 @@ local function toggle_loclist()
   end
 end
 
-keymap("n", "<leader>q", toggle_quickfix, opts)
+keymap("n", "<leader>qq", toggle_quickfix, opts)
 keymap("n", "<leader>ll", toggle_loclist, opts)
