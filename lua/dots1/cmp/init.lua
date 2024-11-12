@@ -157,6 +157,9 @@ cmp.setup.cmdline(
     )
   }
 )
+vim.cmd [[ 
+  autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+]]
 
 -- If you want insert `(` after select function or method item
 local is_cmp_autopairs_ok, cmp_autopairs = pcall(require, "nvim-autopairs.completion.cmp")

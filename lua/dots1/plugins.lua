@@ -63,9 +63,15 @@ return packer.startup(
         {"nvim-treesitter/nvim-treesitter-textobjects"},
         {"RRethy/nvim-treesitter-textsubjects"},
         {"nvim-treesitter/playground", opt = true},
-        {"nvim-treesitter/nvim-treesitter-context"},
-        {"p00f/nvim-ts-rainbow"}
+        {"nvim-treesitter/nvim-treesitter-context"}
       }
+    }
+
+    use {
+      "HiPhish/rainbow-delimiters.nvim",
+      config = function()
+        require("rainbow-delimiters.setup").setup {}
+      end
     }
     -- TODO: Make LSPCONFIG and everything of lsp just load when a server is setted up
     -- LSP Plugins
@@ -189,6 +195,28 @@ return packer.startup(
       "j-hui/fidget.nvim",
       config = function()
         require("fidget").setup({})
+      end
+    }
+
+    use {
+      "kristijanhusak/vim-dadbod-ui",
+      requires = {
+        {
+          "tpope/vim-dadbod",
+          opt = false
+          --[[
+             [cmd = {
+             [  "DBUI",
+             [  "DBUIToggle",
+             [  "DBUIAddConnection",
+             [  "DBUIFindBuffer"
+             [}
+             ]]
+        },
+        {"kristijanhusak/vim-dadbod-completion", ft = {"sql", "mysql", "plsql"}, opt = true} -- Optional
+      },
+      config = function()
+        vim.g.db_ui_use_nerd_fonts = 1
       end
     }
 
