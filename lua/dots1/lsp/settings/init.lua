@@ -24,7 +24,11 @@ if not is_pyright_ok then
 end
 local is_ocamllsp_ok, ocamllsp = pcall(require, "dots1.lsp.settings.ocamllsp")
 if not is_ocamllsp_ok then
-  is_ocamllsp_ok = false
+  ocamllsp = false
+end
+local is_elixirls_ok, elixirls = pcall(require, "dots1.lsp.settings.elixirls")
+if not is_elixirls_ok then
+  elixirls = false
 end
 
 return {
@@ -34,5 +38,6 @@ return {
   tsserver = tsserver,
   efm = efm,
   pyright = pyright,
-  ocamllsp = ocamllsp
+  ocamllsp = ocamllsp,
+  elixirls = elixirls
 }

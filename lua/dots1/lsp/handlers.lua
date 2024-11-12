@@ -5,6 +5,13 @@ end
 
 lsp_format.setup {}
 
+local function reload_quickfix()
+  vim.diagnostic.setqflist({open = false})
+end
+local function reload_loclist()
+  vim.diagnostic.setloclist({open = false})
+end
+
 local function mappings(bufnr)
   local opts = {noremap = true, silent = true, buffer = bufnr}
   local keymap = vim.keymap.set
@@ -21,11 +28,13 @@ local function mappings(bufnr)
   keymap("n", "<leader>gi", "<cmd>lua require('telescope.builtin').lsp_implementations()<cr>", opts)
   keymap("n", "<leader>ld", "<cmd>Telescope diagnostics bufnr=0 <cr>", opts)
   keymap("n", "gd", "<cmd>lua require('telescope.builtin').lsp_definitions()<cr>", opts)
+  keymap("n", "<leader>qr", reload_quickfix, opts)
+  keymap("n", "<leader>lr", reload_loclist, opts)
 end
 
 local function highlight_document(client)
   -- Set autocommands conditional on server_capabilities
-  if client.server_capabilities.documentFormattingProvider then
+  if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_exec(
       [[
       augroup lsp_document_highlight
@@ -75,14 +84,14 @@ M.setup = function()
 
   vim.diagnostic.config(config)
 
-  vim.api.nvim_create_augroup("diagnostics", {clear = true})
+  local augroup = vim.api.nvim_create_augroup("diagnostics", {clear = true})
   vim.api.nvim_create_autocmd(
     "DiagnosticChanged",
     {
-      group = "diagnostics",
+      group = augroup,
       callback = function()
         vim.diagnostic.setloclist({open = false})
-        vim.diagnostic.setqflist({open = false})
+        --vim.diagnostic.setqflist({open = false})
       end
     }
   )
