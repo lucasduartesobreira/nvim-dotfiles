@@ -26,7 +26,7 @@ local autocmd = vim.api.nvim_create_autocmd
 
 autocmd({"BufWinEnter"}, {command = "normal zx"})
 
-vim.g.python3_host_prog = "/usr/bin/python3"
+--vim.g.python3_host_prog = "/usr/bin/python3"
 
 for key, value in pairs(options) do
   vim.opt[key] = value
