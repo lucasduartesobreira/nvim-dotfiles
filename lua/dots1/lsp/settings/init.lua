@@ -35,7 +35,7 @@ return {
   rust_analyzer = rust_analyzer,
   gopls = gopls,
   lua_ls = lua_ls,
-  tsserver = tsserver,
+  ts_ls = tsserver,
   efm = efm,
   pyright = pyright,
   ocamllsp = ocamllsp,
