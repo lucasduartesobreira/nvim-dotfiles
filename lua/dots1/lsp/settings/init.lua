@@ -31,11 +31,17 @@ if not is_elixirls_ok then
   elixirls = false
 end
 
+local is_tstools_ok, tstools = pcall(require, "dots1.lsp.settings.typescript-tools")
+if not is_tstools_ok then
+  tstools = false
+end
+
 return {
   rust_analyzer = rust_analyzer,
   gopls = gopls,
   lua_ls = lua_ls,
-  ts_ls = tsserver,
+  --ts_ls = tsserver,
+  ["typescript-tools"] = tstools,
   efm = efm,
   pyright = pyright,
   ocamllsp = ocamllsp,

@@ -16,7 +16,8 @@ local setup_server = function(server, config)
 
   local on_attach = handlers.build_on_attach(config.on_attach)
   config.on_attach = on_attach
-  config = vim.tbl_deep_extend(
+  config =
+    vim.tbl_deep_extend(
     "force",
     {
       on_init = handlers.on_init,
