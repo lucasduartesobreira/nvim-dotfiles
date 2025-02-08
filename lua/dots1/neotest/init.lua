@@ -6,15 +6,6 @@ end
 neotest.setup(
   {
     adapters = {
-      require("neotest-jest")(
-        {
-          jestCommand = "npm test --",
-          cwd = function(path)
-            print(vim.inspect(path))
-            return vim.fn.getcwd()
-          end
-        }
-      ),
       require("neotest-rust")
     }
   }
