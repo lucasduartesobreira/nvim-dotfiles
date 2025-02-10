@@ -15,6 +15,11 @@ neotest.setup(
           end
         }
       ),
+      require("neotest-vitest")(
+        {
+          vitestCommand = "npm test --"
+        }
+      ),
       require("neotest-rust")
     }
   }
