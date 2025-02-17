@@ -13,15 +13,11 @@ grug_far.setup(
   }
 )
 
+local keymap = vim.keymap.set
 keymap(
   "n",
-  "<leader>gga",
+  "<leader>gf",
   function()
-    grug_far.open(
-      {
-        engine = "astgrep"
-      }
-    )
+    grug_far.open()
   end
 )
-
