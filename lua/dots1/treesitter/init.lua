@@ -6,7 +6,12 @@ require "nvim-treesitter.configs".setup {
     "lua",
     "rust",
     "go",
-    "sql"
+    "sql",
+    "bash",
+    "yaml",
+    "prisma",
+    "json",
+    "jsonc"
   },
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = true,
