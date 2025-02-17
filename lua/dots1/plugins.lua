@@ -227,6 +227,10 @@ return packer.startup(
       requires = {"nvim-lua/plenary.nvim", "neovim/nvim-lspconfig"}
     }
 
+    use {
+      "MagicDuck/grug-far.nvim"
+    }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
