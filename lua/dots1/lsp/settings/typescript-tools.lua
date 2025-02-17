@@ -1,6 +1,6 @@
 local localSettings = {
   settings = {
-    separate_diagnostic_server = false,
+    separate_diagnostic_server = true,
     tsserver_file_preferences = {
       includeCompletionsForModuleExports = true,
       includeInlayParameterNameHints = "all",
