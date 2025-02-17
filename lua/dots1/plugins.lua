@@ -95,7 +95,6 @@ return packer.startup(
         {"hrsh7th/cmp-path"},
         {"f3fora/cmp-spell"},
         {"hrsh7th/cmp-nvim-lsp-signature-help"},
-        {"tzachar/cmp-tabnine", run = "./install.sh"},
         {"rcarriga/cmp-dap"},
         {"hrsh7th/cmp-cmdline"}
       }
