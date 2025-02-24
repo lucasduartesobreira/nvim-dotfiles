@@ -11,7 +11,12 @@ require "nvim-treesitter.configs".setup {
     "yaml",
     "prisma",
     "json",
-    "jsonc"
+    "jsonc",
+    "git_config",
+    "gitcommit",
+    "gitignore",
+    "gitattributes",
+    "git_rebase"
   },
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = true,
