@@ -76,6 +76,7 @@ return packer.startup(
     -- TODO: Make LSPCONFIG and everything of lsp just load when a server is setted up
     -- LSP Plugins
     use "neovim/nvim-lspconfig"
+    use "stevearc/conform.nvim"
     use "jose-elias-alvarez/null-ls.nvim"
 
     -- Snippets
