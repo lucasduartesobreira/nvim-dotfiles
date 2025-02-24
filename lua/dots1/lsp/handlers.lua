@@ -1,10 +1,3 @@
-local is_format_ok, lsp_format = pcall(require, "lsp-format")
-if not is_format_ok then
-  return
-end
-
-lsp_format.setup {}
-
 local function reload_quickfix()
   vim.diagnostic.setqflist({open = false})
 end
@@ -129,9 +122,6 @@ M.build_on_attach = function(...)
       if v ~= nil then
         v(client, bufnr)
       end
-    end
-    if client.server_capabilities.documentFormattingProvider then
-      lsp_format.on_attach(client)
     end
   end
   return base_on_attach

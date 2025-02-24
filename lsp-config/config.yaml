@@ -91,18 +91,18 @@ tools:
 languages:
   javascript:
     - <<: *eslint-lint
-    - <<: *prettier
+    #- <<: *prettier
   typescript:
     - <<: *eslint-lint
     #- <<: *eslint-format
-    - <<: *prettier
+    #- <<: *prettier
   typescriptreact:
     - <<: *eslint-lint
     #- <<: *eslint-format
-    - <<: *prettier
+    #- <<: *prettier
   go:
     - <<: *golangci-lint
-    - <<: *gofmt
-    - <<: *goimports
+    #- <<: *gofmt
+    #- <<: *goimports
   lua:
-    - <<: *luafmt
+    #- <<: *luafmt
