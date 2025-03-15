@@ -36,6 +36,11 @@ if not is_tstools_ok then
   tstools = false
 end
 
+local is_astgrep_ok, astgrep = pcall(require, "dots1.lsp.settings.astgrep")
+if not is_astgrep_ok then
+  astgrep = false
+end
+
 return {
   rust_analyzer = rust_analyzer,
   gopls = gopls,
@@ -45,5 +50,6 @@ return {
   efm = efm,
   pyright = pyright,
   ocamllsp = ocamllsp,
-  elixirls = elixirls
+  elixirls = elixirls,
+  ast_grep = astgrep
 }
