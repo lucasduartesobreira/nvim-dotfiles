@@ -15,16 +15,10 @@ return {
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
-        library = {
-          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-          [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
-          [vim.fn.stdpath("data") .. "/site/pack/packer/start"] = true,
-          [vim.fn.stdpath("data") .. "/site/pack/packer/opt"] = true,
-          [vim.fn.stdpath("config") .. "/lua"] = true,
-          ["${3rd}/luassert/library"] = true,
-          ["${3rd}/luv/library"] = true
-        }
+        library = vim.api.nvim_get_runtime_file("", true),
+        checkThirdParty = false
       },
+      telemetry = {enabled = false},
       hint = {
         enable = true
       }
