@@ -1,3 +1,14 @@
+require("nvim-treesitter-textsubjects").configure(
+  {
+    prev_selection = ",", -- (Optional) keymap to select the previous selection
+    keymaps = {
+      ["."] = "textsubjects-smart",
+      [";"] = "",
+      ["i;"] = ""
+    }
+  }
+)
+
 require "nvim-treesitter.configs".setup {
   -- A list of parser names, or "all"
   ensure_installed = {
@@ -78,11 +89,7 @@ require "nvim-treesitter.configs".setup {
     }
   },
   textsubjects = {
-    enable = true,
-    prev_selection = ",", -- (Optional) keymap to select the previous selection
-    keymaps = {
-      ["."] = "textsubjects-smart"
-    }
+    enable = true
   },
   playground = {
     enable = true,
