@@ -1,3 +1,6 @@
+local opt_path =
+  os.getenv("HOME") .. "/.local/share/nvim/site/pack/packer/opt" .. "/vscode-js-debug/dist/src/dapDebugServer.js"
+
 local adapters = {
   codelldb = require("dots1.dap.rust_utils").adapter,
   go = function(callback, _)
@@ -25,7 +28,27 @@ local adapters = {
     )
 
     --callback({type = "server", host = "127.0.0.1", port = port})
-  end
+  end,
+  ["pwa-node"] = {
+    type = "server",
+    host = "localhost",
+    port = "${port}",
+    executable = {
+      command = "node",
+      -- 💀 Make sure to update this path to point to your installation
+      args = {opt_path, "${port}"}
+    }
+  },
+  ["pwa-chrome"] = {
+    type = "",
+    host = "localhost",
+    port = "${port}",
+    executable = {
+      command = "node",
+      -- 💀 Make sure to update this path to point to your installation
+      args = {opt_path, "${port}"}
+    }
+  }
 }
 
 local configs = {
@@ -75,6 +98,19 @@ local configs = {
       request = "attach",
       name = "Attach",
       processId = require "dap.utils".pick_process,
+      cwd = "${workspaceFolder}"
+    },
+    {
+      type = "pwa-node",
+      request = "attach",
+      name = "Attach Chrome",
+      --[[
+         [url = function()
+         [  return vim.fn.input("URL: ")
+         [end,
+         ]]
+      port = 9229,
+      continueOnAttach = true,
       cwd = "${workspaceFolder}"
     },
     {
