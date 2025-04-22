@@ -96,7 +96,10 @@ return packer.startup(
         {"f3fora/cmp-spell"},
         {"hrsh7th/cmp-nvim-lsp-signature-help"},
         {"rcarriga/cmp-dap"},
-        {"hrsh7th/cmp-cmdline"}
+        {"hrsh7th/cmp-cmdline"},
+        {
+          "supermaven-inc/supermaven-nvim"
+        }
       }
     }
     -- Theme
