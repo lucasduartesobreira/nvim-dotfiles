@@ -5,6 +5,8 @@ local function reload_loclist()
   vim.diagnostic.setloclist({open = false})
 end
 
+vim.o.winborder = "rounded"
+
 local function mappings(bufnr)
   local opts = {noremap = true, silent = true, buffer = bufnr}
   local keymap = vim.keymap.set
@@ -86,22 +88,6 @@ M.setup = function()
         vim.diagnostic.setloclist({open = false})
         --vim.diagnostic.setqflist({open = false})
       end
-    }
-  )
-
-  vim.lsp.handlers["textDocument/hover"] =
-    vim.lsp.with(
-    vim.lsp.handlers.hover,
-    {
-      border = "rounded"
-    }
-  )
-
-  vim.lsp.handlers["textDocument/signatureHelp"] =
-    vim.lsp.with(
-    vim.lsp.handlers.signature_help,
-    {
-      border = "rounded"
     }
   )
 end
