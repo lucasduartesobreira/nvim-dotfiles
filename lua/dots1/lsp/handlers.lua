@@ -6,9 +6,18 @@ local function reload_loclist()
 end
 
 vim.o.winborder = "rounded"
+local build_diagnostic_virtual_lines_config = function(show_virtual_lines)
+  return {
+    virtual_lines = show_virtual_lines and
+      {
+        current_line = show_virtual_lines
+      }
+  }
+end
 
 local function mappings(bufnr)
   local opts = {noremap = true, silent = true, buffer = bufnr}
+  local show_virtual_lines = true
   local keymap = vim.keymap.set
   keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
   keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
@@ -17,6 +26,15 @@ local function mappings(bufnr)
   keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
   keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
   keymap("n", "<leader>sdl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+  keymap(
+    "n",
+    "<leader>tvl",
+    function()
+      show_virtual_lines = not show_virtual_lines
+      vim.diagnostic.config(build_diagnostic_virtual_lines_config(show_virtual_lines))
+    end,
+    opts
+  )
   -- Telescope binds
   keymap("n", "<cr>", "<cmd>lua vim.lsp.buf.code_action({timeout=2000})<cr>", opts)
   keymap("n", "<leader>gr", "<cmd>lua require('telescope.builtin').lsp_references()<cr>", opts)
@@ -60,6 +78,7 @@ M.setup = function()
   local config = {
     -- disable virtual text
     virtual_text = false,
+    virtual_lines = build_diagnostic_virtual_lines_config(false),
     -- show signs
     signs = {
       active = signs
