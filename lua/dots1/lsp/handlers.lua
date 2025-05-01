@@ -5,7 +5,11 @@ local function reload_loclist()
   vim.diagnostic.setloclist({open = false})
 end
 
-vim.o.winborder = "rounded"
+local hover = vim.lsp.buf.hover
+vim.lsp.buf.hover = function()
+  return hover({border = "rounded"})
+end
+
 local build_diagnostic_virtual_lines_config = function(show_virtual_lines)
   return {
     virtual_lines = show_virtual_lines and
