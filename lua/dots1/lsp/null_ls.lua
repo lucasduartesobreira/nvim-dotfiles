@@ -5,19 +5,21 @@ end
 
 local builtins = null_ls.builtins
 
-null_ls.setup(
-  {
-    sources = {
-      builtins.code_actions.eslint_d
-      --builtins.diagnostics.eslint_d,
-      --builtins.diagnostics.golangci_lint,
-      --builtins.diagnostics.standardjs,
-      --builtins.formatting.eslint_d,
-      --builtins.formatting.prettier,
-      --builtins.formatting.gofmt,
-      --builtins.formatting.goimports,
-      --builtins.formatting.standardjs,
-      --builtins.formatting.stylua
-    }
-  }
-)
+--[[
+   [null_ls.setup(
+   [  {
+   [    sources = {
+   [      builtins.code_actions.eslint_d
+   [      --builtins.diagnostics.eslint_d,
+   [      --builtins.diagnostics.golangci_lint,
+   [      --builtins.diagnostics.standardjs,
+   [      --builtins.formatting.eslint_d,
+   [      --builtins.formatting.prettier,
+   [      --builtins.formatting.gofmt,
+   [      --builtins.formatting.goimports,
+   [      --builtins.formatting.standardjs,
+   [      --builtins.formatting.stylua
+   [    }
+   [  }
+   [)
+   ]]
