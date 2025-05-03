@@ -232,6 +232,11 @@ return packer.startup(
       "MagicDuck/grug-far.nvim"
     }
 
+    use {
+      "ggandor/leap.nvim",
+      dependencies = {"tpope/vim-repeat"}
+    }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
