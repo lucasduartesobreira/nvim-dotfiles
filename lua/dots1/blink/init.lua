@@ -15,6 +15,9 @@ local kind_texts = {
 }
 
 cmp.setup {
+  cmdline = {
+    enabled = true
+  },
   keymap = {
     preset = "enter",
     ["<C-space>"] = {"show", "show_documentation", "hide_documentation"},
