@@ -227,7 +227,8 @@ return packer.startup(
       requires = {
         {"onsails/lspkind-nvim"},
         {"huijiro/blink-cmp-supermaven"},
-        {"kyazdani42/nvim-web-devicons"}
+        {"kyazdani42/nvim-web-devicons"},
+        {"mikavilpas/blink-ripgrep.nvim"}
       }
     }
 
