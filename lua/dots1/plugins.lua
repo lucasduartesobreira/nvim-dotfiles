@@ -237,6 +237,15 @@ return packer.startup(
       dependencies = {"tpope/vim-repeat"}
     }
 
+    use {
+      "saghen/blink.cmp",
+      requires = {
+        {"onsails/lspkind-nvim"},
+        {"huijiro/blink-cmp-supermaven"},
+        {"kyazdani42/nvim-web-devicons"}
+      }
+    }
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then

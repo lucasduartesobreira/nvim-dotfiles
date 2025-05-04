@@ -141,11 +141,11 @@ M.on_init = function(client)
   client.config.flags.allow_incremental_sync = true
 end
 
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
+local is_cmp_ok, cmp = pcall(require, "blink.cmp")
+if not is_cmp_ok then
   return
 end
 
-M.capabilities = cmp_nvim_lsp.default_capabilities()
+M.capabilities = cmp.get_lsp_capabilities()
 
 return M
