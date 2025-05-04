@@ -7,7 +7,11 @@ return {
     Lua = {
       runtime = {
         -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = "LuaJIT"
+        version = "LuaJIT",
+        path = {
+          "lua/?.lua",
+          "lua/?/init.lua"
+        }
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
@@ -15,7 +19,7 @@ return {
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
+        library = {vim.env.VIMRUNTIME},
         checkThirdParty = false
       },
       telemetry = {enabled = false},
