@@ -3,6 +3,17 @@ if not is_cmp_ok then
   return
 end
 
+local kind_texts = {
+  CmdLine = "[CMD]",
+  Path = "[PATH]",
+  File = "[FILE]",
+  Buffer = "[BUF]",
+  LSP = "[LSP]",
+  Snippets = "[Snip]",
+  supermaven = "[SuperMaven]",
+  Ripgrep = "[RG]"
+}
+
 cmp.setup {
   keymap = {
     preset = "enter",
@@ -37,8 +48,13 @@ cmp.setup {
       auto_show = true,
       border = "rounded",
       draw = {
-        columns = {{"label", "label_description", gap = 1}, {"kind_icon", "kind"}},
+        columns = {{"label", "label_description", gap = 1}, {"kind_icon", "source_name"}},
         components = {
+          source_name = {
+            text = function(ctx)
+              return kind_texts[ctx.source_name] or ctx.source_name
+            end
+          },
           kind_icon = {
             text = function(ctx)
               local icon = ctx.kind_icon
