@@ -103,7 +103,7 @@ cmp.setup {
   -- Default list of enabled providers defined so that you can extend it
   -- elsewhere in your config, without redefining it, due to `opts_extend`
   sources = {
-    default = {"lsp", "path", "supermaven", "snippets", "buffer", "ripgrep"},
+    default = {"lazydev", "lsp", "path", "supermaven", "snippets", "buffer", "ripgrep"},
     per_filetype = {
       sql = {"snippets", "dadbod", "buffer"}
     },
@@ -206,6 +206,10 @@ cmp.setup {
         name = "supermaven",
         module = "blink-cmp-supermaven",
         async = true
+      },
+      lazydev = {
+        name = "lazydev",
+        module = "lazydev.integrations.blink"
       }
     }
   },
