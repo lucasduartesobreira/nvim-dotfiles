@@ -234,7 +234,7 @@ return packer.startup(
 
     use {
       "ggandor/leap.nvim",
-      dependencies = {"tpope/vim-repeat"}
+      requires = {"tpope/vim-repeat"}
     }
 
     use {
