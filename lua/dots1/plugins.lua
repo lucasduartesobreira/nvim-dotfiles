@@ -83,25 +83,6 @@ return packer.startup(
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
 
-    -- Nvim Compe
-    use {
-      "hrsh7th/nvim-cmp",
-      as = "cmp",
-      requires = {
-        {"onsails/lspkind-nvim"},
-        {"hrsh7th/cmp-nvim-lsp", requires = {"neovim/nvim-lspconfig"}},
-        {"hrsh7th/cmp-buffer"},
-        {"saadparwaiz1/cmp_luasnip"},
-        {"hrsh7th/cmp-path"},
-        {"f3fora/cmp-spell"},
-        {"hrsh7th/cmp-nvim-lsp-signature-help"},
-        {"rcarriga/cmp-dap"},
-        {"hrsh7th/cmp-cmdline"},
-        {
-          "supermaven-inc/supermaven-nvim"
-        }
-      }
-    }
     -- Theme
     use "EdenEast/nightfox.nvim"
 
@@ -235,6 +216,10 @@ return packer.startup(
     use {
       "ggandor/leap.nvim",
       requires = {"tpope/vim-repeat"}
+    }
+
+    use {
+      "supermaven-inc/supermaven-nvim"
     }
 
     use {
