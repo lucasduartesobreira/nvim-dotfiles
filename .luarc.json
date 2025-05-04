@@ -1,8 +1,8 @@
 {
-    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
-    "Lua.workspace.library": [
-        "${3rd}/luassert/library",
-"/home/lucas/.config/nvim",
+  "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+  "Lua.workspace.library": [
+    "${3rd}/luassert/library",
+    "/home/lucas/.config/nvim",
     "/home/lucas/.local/share/nvim/site/lua",
     "/home/lucas/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim/lua",
     "/home/lucas/.local/share/nvim/site/pack/packer/start/LuaSnip/lua",
@@ -60,13 +60,20 @@
     "/home/lucas/.local/share/nvim/site/pack/packer/start/lspkind-nvim/lua",
     "/home/lucas/.local/share/nvim/site/pack/packer/start/blink-ripgrep.nvim/lua",
     "/home/lucas/.local/share/nvim/site/pack/packer/start/nvim-cokeline/lua"
-    ],
-  "Lua.diagnostics.globals": ["vim"],
+  ],
+  "Lua.diagnostics.globals": [
+    "vim"
+  ],
   "Lua.hint.enable": true,
-  "Lua.runtime.path": ["?.lua", "?/init.lua"],
+  "Lua.runtime.path": [
+    "?.lua",
+    "?/init.lua"
+  ],
   "Lua.runtime.pathStrict": true,
   "Lua.runtime.version": "LuaJIT",
   "Lua.telemetry.enabled": false,
   "Lua.workspace.checkThirdParty": false,
-  "Lua.workspace.ignoreDir": ["/lua"],
+  "Lua.workspace.ignoreDir": [
+    "/lua"
+  ]
 }
