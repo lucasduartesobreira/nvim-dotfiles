@@ -10,6 +10,10 @@ require("nvim-treesitter-textsubjects").configure(
 )
 
 require "nvim-treesitter.configs".setup {
+  auto_install = true,
+  -- List of parsers to ignore installing
+  ignore_install = {},
+  modules = {},
   -- A list of parser names, or "all"
   ensure_installed = {
     "javascript",
