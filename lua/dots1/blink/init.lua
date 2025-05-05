@@ -38,7 +38,6 @@ cmp.setup {
   snippets = {
     preset = "luasnip"
   },
-  accept = {auto_brackets = {enabled = true}},
   appearance = {
     -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
     -- Adjusts spacing to ensure icons are aligned
