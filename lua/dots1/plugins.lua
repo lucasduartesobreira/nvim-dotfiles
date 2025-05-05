@@ -229,7 +229,8 @@ return packer.startup(
         {"huijiro/blink-cmp-supermaven"},
         {"kyazdani42/nvim-web-devicons"},
         {"mikavilpas/blink-ripgrep.nvim"}
-      }
+      },
+      tag = "v1.*"
     }
 
     use {
