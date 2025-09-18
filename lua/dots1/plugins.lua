@@ -235,8 +235,18 @@ return packer.startup(
     use {
       "folke/lazydev.nvim",
       config = function()
-        require("lazydev").setup({})
-      end
+        require("lazydev").setup(
+          {
+            library = {
+              path = "wezterm-types",
+              mods = {"wezterm"}
+            }
+          }
+        )
+      end,
+      requires = {
+        "gonstoll/wezterm-types"
+      }
     }
 
     -- Automatically set up your configuration after cloning packer.nvim
