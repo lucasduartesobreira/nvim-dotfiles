@@ -77,7 +77,6 @@ return packer.startup(
     -- LSP Plugins
     use "neovim/nvim-lspconfig"
     use "stevearc/conform.nvim"
-    use "jose-elias-alvarez/null-ls.nvim"
 
     -- Snippets
     use "L3MON4D3/LuaSnip"
