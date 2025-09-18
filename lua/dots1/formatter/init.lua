@@ -25,6 +25,12 @@ conform.setup(
         "prettierd",
         "prettier",
         stop_after_first = true
+      },
+      javascriptreact = {
+        "biome",
+        "prettierd",
+        "prettier",
+        stop_after_first = true
       }
     },
     format_after_save = {
