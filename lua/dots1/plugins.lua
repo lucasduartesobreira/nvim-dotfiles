@@ -245,7 +245,7 @@ return packer.startup(
         )
       end,
       requires = {
-        "gonstoll/wezterm-types"
+        "DrKJeff16/wezterm-types"
       }
     }
 
