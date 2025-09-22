@@ -68,7 +68,7 @@ local localSettings = {
   }
 }
 
-require("typescript-tools").setup(localSettings)
+--require("typescript-tools").setup(localSettings)
 
 local toOverride = {
   on_attach = function(client, bufnr)

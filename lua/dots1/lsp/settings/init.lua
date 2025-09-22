@@ -41,15 +41,21 @@ if not is_astgrep_ok then
   astgrep = false
 end
 
+local is_tsgo_ok, tsgo = pcall(require, "dots1.lsp.settings.tsgo")
+if not is_tsgo_ok then
+  return
+end
+
 return {
   rust_analyzer = rust_analyzer,
   gopls = gopls,
   lua_ls = lua_ls,
   --ts_ls = tsserver,
-  ["typescript-tools"] = tstools,
+  --["typescript-tools"] = tstools,
   efm = efm,
   pyright = pyright,
   ocamllsp = ocamllsp,
   elixirls = elixirls,
-  ast_grep = astgrep
+  ast_grep = astgrep,
+  tsgo_ls = tsgo
 }
