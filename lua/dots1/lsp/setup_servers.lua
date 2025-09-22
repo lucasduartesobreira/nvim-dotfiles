@@ -28,7 +28,10 @@ local setup_server = function(server, config)
     },
     config
   )
-  lspconfig[server].setup(config)
+
+  vim.lsp.config(server, config)
+  vim.lsp.enable(server)
+  --lspconfig[server].setup(config)
 end
 
 return {
