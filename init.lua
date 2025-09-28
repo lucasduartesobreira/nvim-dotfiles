@@ -1,4 +1,4 @@
-require("dots1.plugins")
+require("config.lazy")
 require("dots1.theme")
 require("dots1.options")
 require("dots1.keybinds")
