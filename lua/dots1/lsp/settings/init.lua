@@ -14,10 +14,12 @@ local is_ts_ok, tsserver = pcall(require, "dots1.lsp.settings.tsserver")
 if not is_ts_ok then
   tsserver = false
 end
-local is_efm_ok, efm = pcall(require, "dots1.lsp.settings.efm")
-if not is_efm_ok then
-  efm = false
-end
+--[[
+   [local is_efm_ok, efm = pcall(require, "dots1.lsp.settings.efm")
+   [if not is_efm_ok then
+   [  efm = false
+   [end
+   ]]
 local is_pyright_ok, pyright = pcall(require, "dots1.lsp.settings.pyright")
 if not is_pyright_ok then
   is_pyright_ok = false
@@ -52,7 +54,7 @@ return {
   lua_ls = lua_ls,
   --ts_ls = tsserver,
   --["typescript-tools"] = tstools,
-  efm = efm,
+  --efm = efm,
   pyright = pyright,
   ocamllsp = ocamllsp,
   elixirls = elixirls,
