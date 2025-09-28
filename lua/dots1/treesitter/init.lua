@@ -26,7 +26,7 @@ require "nvim-treesitter.configs".setup {
     "yaml",
     "prisma",
     "json",
-    "jsonc",
+    --"jsonc",
     "git_config",
     "gitcommit",
     "gitignore",
