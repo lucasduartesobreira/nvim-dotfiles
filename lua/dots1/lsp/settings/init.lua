@@ -48,6 +48,21 @@ if not is_tsgo_ok then
   return
 end
 
+local is_jsonlsp_ok, jsonlsp = pcall(require, "dots1.lsp.settings.jsonlsp")
+if not is_jsonlsp_ok then
+  jsonlsp = false
+end
+
+local is_terraform_ok, terraform = pcall(require, "dots1.lsp.settings.terraform")
+if not is_terraform_ok then
+  return
+end
+
+local is_yamlls_ok, yamlls = pcall(require, "dots1.lsp.settings.yamlls")
+if not is_yamlls_ok then
+  yamlls = false
+end
+
 return {
   rust_analyzer = rust_analyzer,
   gopls = gopls,
@@ -59,5 +74,8 @@ return {
   ocamllsp = ocamllsp,
   elixirls = elixirls,
   ast_grep = astgrep,
-  tsgo_ls = tsgo
+  tsgo_ls = tsgo,
+  jsonls = jsonlsp,
+  terraformls = terraform,
+  yamlls = yamlls
 }
