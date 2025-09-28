@@ -62,19 +62,6 @@ keymap("i", "<C-s>", "<cmd>w<CR>", opts)
 -- sugar bind to ` (goto mark)
 keymap("n", "gm", "`", opts)
 
--- Resource nvim
-local is_plenary_ok, plenary_reload = pcall(require, "plenary.reload")
-if is_plenary_ok then
-  vim.keymap.set(
-    "n",
-    "<leader>r",
-    function()
-      plenary_reload.reload_module("dots1", true)
-      vim.cmd [[source $MYVIMRC]]
-    end
-  )
-end
-
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
