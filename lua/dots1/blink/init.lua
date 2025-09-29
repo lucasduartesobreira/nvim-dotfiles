@@ -107,8 +107,14 @@ cmp.setup {
       sql = {"snippets", "dadbod", "buffer"}
     },
     providers = {
-      dadbod = {name = "Dadbod", module = "vim_dadbod_completion.blink"},
+      lsp = {
+        min_keyword_length = 3,
+        score_offset = 10
+      },
+      dadbod = {name = "Dadbod", module = "vim_dadbod_completion.blink", min_keyword_length = 2, score_offset = 10},
       ripgrep = {
+        min_keyword_length = 5,
+        score_offset = 9,
         module = "blink-ripgrep",
         name = "Ripgrep",
         -- the options below are optional, some default values are shown
@@ -120,7 +126,7 @@ cmp.setup {
 
           -- the minimum length of the current word to start searching
           -- (if the word is shorter than this, the search will not start)
-          prefix_min_len = 3,
+          prefix_min_len = 5,
           -- Specifies how to find the root of the project where the ripgrep
           -- search will start from. Accepts the same options as the marker
           -- given to `:h vim.fs.root()` which offers many possibilities for
@@ -163,7 +169,7 @@ cmp.setup {
               -- Examples:
               -- "1024" (bytes by default), "200K", "1M", "1G", which will
               -- exclude files larger than that size.
-              max_filesize = "1M",
+              max_filesize = "5K",
               -- Enable fallback to neovim cwd if project_root_marker is not
               -- found. Default: `true`, which means to use the cwd.
               project_root_fallback = true
@@ -178,7 +184,7 @@ cmp.setup {
             -- - "gitgrep", always use git grep
             -- - "gitgrep-or-ripgrep", use git grep if possible, otherwise
             --   ripgrep
-            use = "ripgrep",
+            use = "gitgrep-or-ripgrep",
             -- The casing to use for the search in a format that ripgrep
             -- accepts. Defaults to "--ignore-case". See `rg --help` for all the
             -- available options ripgrep supports, but you can try
@@ -199,11 +205,21 @@ cmp.setup {
         }
       },
       supermaven = {
+        score_offset = 11,
         name = "supermaven",
         module = "blink-cmp-supermaven",
         async = true
       },
+      path = {
+        min_keyword_length = 3,
+        score_offset = 8
+      },
+      buffer = {
+        min_keyword_length = 5,
+        score_offset = 7
+      },
       lazydev = {
+        score_offset = 10,
         name = "lazydev",
         module = "lazydev.integrations.blink"
       }
@@ -214,5 +230,5 @@ cmp.setup {
   -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
   --
   -- See the fuzzy documentation for more information
-  fuzzy = {implementation = "prefer_rust_with_warning"}
+  fuzzy = {implementation = "prefer_rust_with_warning", sorts = {"exact", "score", "sort_text", "kind"}}
 }
