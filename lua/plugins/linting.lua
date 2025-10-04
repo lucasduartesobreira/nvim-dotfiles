@@ -5,6 +5,22 @@ return {
     local is_lint_ok, lint = pcall(require, "lint")
     assert(is_lint_ok, "Failed to load lint")
 
+    local lintUtil = require("lint.util")
+
+    local wrappedEslintd =
+      lintUtil.wrap(
+      lint.linters.eslint_d,
+      function(diagnostic)
+        if string.find(diagnostic.message, "Error: Could not find config file") then
+          return nil
+        end
+
+        return diagnostic
+      end
+    )
+
+    lint.linters.eslint_d = wrappedEslintd
+
     lint.linters_by_ft = {
       javascript = {"eslint_d"},
       javascriptreact = {"eslint_d"},
