@@ -1,5 +1,8 @@
+local local_binary = vim.fn.fnamemodify("./node_modules/.bin/tsgo", ":p")
+local local_path = vim.uv.fs_stat(local_binary) and local_binary or "tsgo"
+
 return {
-  cmd = {"/home/lucas/.asdf/shims/tsgo", "--lsp", "--stdio"},
+  cmd = {local_path, "--lsp", "--stdio"},
   filetypes = {
     "javascript",
     "javascriptreact",
