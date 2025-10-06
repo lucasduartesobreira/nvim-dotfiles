@@ -108,8 +108,7 @@ cmp.setup {
     },
     providers = {
       lsp = {
-        min_keyword_length = 3,
-        score_offset = 10
+        score_offset = 11
       },
       dadbod = {name = "Dadbod", module = "vim_dadbod_completion.blink", min_keyword_length = 2, score_offset = 10},
       ripgrep = {
@@ -205,7 +204,7 @@ cmp.setup {
         }
       },
       supermaven = {
-        score_offset = 11,
+        score_offset = 12,
         name = "supermaven",
         module = "blink-cmp-supermaven",
         async = true
