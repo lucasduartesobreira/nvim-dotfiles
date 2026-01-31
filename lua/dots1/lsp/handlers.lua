@@ -34,8 +34,8 @@ local function mappings(bufnr)
     "n",
     "<leader>tvl",
     function()
-      show_virtual_lines = not show_virtual_lines
-      vim.diagnostic.config(build_diagnostic_virtual_lines_config(show_virtual_lines))
+      local diag = require("tiny-inline-diagnostic")
+      diag.toggle()
     end,
     opts
   )
@@ -71,7 +71,7 @@ M.setup = function()
   local config = {
     -- disable virtual text
     virtual_text = false,
-    virtual_lines = build_diagnostic_virtual_lines_config(false),
+    --virtual_lines = build_diagnostic_virtual_lines_config(false),
     -- show signs
     signs = {
       text = {
@@ -85,7 +85,7 @@ M.setup = function()
     underline = true,
     severity_sort = true,
     float = {
-      focusable = false,
+      focusable = true,
       style = "minimal",
       border = "rounded",
       source = "always",

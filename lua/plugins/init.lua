@@ -32,7 +32,10 @@ return {
   "neovim/nvim-lspconfig",
   "stevearc/conform.nvim",
   -- Snippets
-  "L3MON4D3/LuaSnip",
+  {
+    "L3MON4D3/LuaSnip",
+    build = "make install_jsregexp"
+  },
   "rafamadriz/friendly-snippets",
   -- Theme
   "EdenEast/nightfox.nvim",
@@ -138,7 +141,7 @@ return {
     "MagicDuck/grug-far.nvim"
   },
   {
-    "ggandor/leap.nvim",
+    url = "https://codeberg.org/andyg/leap.nvim",
     dependencies = {"tpope/vim-repeat"}
   },
   {
@@ -147,7 +150,7 @@ return {
   {
     "saghen/blink.cmp",
     dependencies = {
-      {"onsails/lspkind-nvim"},
+      {"onsails/lspkind-nvim", commit = "09c4e4d"},
       {"huijiro/blink-cmp-supermaven"},
       {"kyazdani42/nvim-web-devicons"},
       {"mikavilpas/blink-ripgrep.nvim"}

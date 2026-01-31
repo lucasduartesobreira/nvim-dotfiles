@@ -1,29 +1,30 @@
-vim.api.nvim_create_user_command(
-  "LspStop",
-  function(info)
-    local clients = info.fargs
-    if #clients == 0 then
-      clients =
-        vim.iter(vim.lsp.get_clients({bufnr = vim.api.nvim_get_current_buf()})):map(
-        function(client)
-          return client.name
-        end
-      ):totable()
-    end
-    for _, name in ipairs(clients) do
-      if vim.lsp.config[name] == nil then
-        vim.notify(("Invalid server name '%s'"):format(name))
-      else
-        vim.lsp.enable(name, false)
-      end
-    end
-  end,
-  {
-    desc = "Disable and stop the given client",
-    nargs = "?"
-  }
-)
-
+--[[
+   [vim.api.nvim_create_user_command(
+   [  "LspStop",
+   [  function(info)
+   [    local clients = info.fargs
+   [    if #clients == 0 then
+   [      clients =
+   [        vim.iter(vim.lsp.get_clients({bufnr = vim.api.nvim_get_current_buf()})):map(
+   [        function(client)
+   [          return client.name
+   [        end
+   [      ):totable()
+   [    end
+   [    for _, name in ipairs(clients) do
+   [      if vim.lsp.config[name] == nil then
+   [        vim.notify(("Invalid server name '%s'"):format(name))
+   [      else
+   [        vim.lsp.enable(name, false)
+   [      end
+   [    end
+   [  end,
+   [  {
+   [    desc = "Disable and stop the given client",
+   [    nargs = "?"
+   [  }
+   [)
+   ]]
 local localSettings = {
   settings = {
     separate_diagnostic_server = true,

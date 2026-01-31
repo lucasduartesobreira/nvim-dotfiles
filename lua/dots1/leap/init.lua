@@ -3,7 +3,8 @@ if not is_leap_ok then
   return
 end
 
-leap.set_default_mappings()
+vim.keymap.set({"n", "x", "o"}, "s", "<Plug>(leap)")
+vim.keymap.set("n", "S", "<Plug>(leap-from-window)")
 require("leap.user").set_repeat_keys("<s-enter>", "<backspace>", "<tab>")
 leap.opts.special_keys.next_target = "<s-enter>"
 

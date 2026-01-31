@@ -74,8 +74,9 @@ return {
   ocamllsp = ocamllsp,
   elixirls = elixirls,
   ast_grep = astgrep,
-  tsgo_ls = tsgo,
+  tsgo = tsgo,
   jsonls = jsonlsp,
   terraformls = terraform,
-  yamlls = yamlls
+  yamlls = yamlls,
+  pylsp = {}
 }
