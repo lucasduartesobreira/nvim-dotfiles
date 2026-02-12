@@ -2,9 +2,7 @@ require("nvim-treesitter-textsubjects").configure(
   {
     prev_selection = ",", -- (Optional) keymap to select the previous selection
     keymaps = {
-      ["."] = "textsubjects-smart",
-      [";"] = "",
-      ["i;"] = ""
+      ["."] = "textsubjects-smart"
     }
   }
 )
